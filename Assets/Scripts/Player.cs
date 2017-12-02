@@ -7,6 +7,9 @@ public class Player : MonoBehaviour {
     private Vector3 velocity = Vector3.zero;
     private float acceleration = 25;
     private float maxSpeed;
+    private float driftAngle;
+    private float driftSpeed = 0.5f;
+    private float maxDriftAngle = 30;
 
     private KeyCode upKey = KeyCode.W;
     private KeyCode downKey = KeyCode.S;
@@ -47,7 +50,7 @@ public class Player : MonoBehaviour {
 
         move();
 
-        GameManager.Drink(0.001f);
+        //GameManager.Drink(0.001f);
 	}
 
     private void move()
@@ -65,17 +68,50 @@ public class Player : MonoBehaviour {
             nextMaxSpeedRandomizationTime = Time.time + GaussianDistribution.Generate(4, 1);
         }
 
-        if (direction == Vector3.zero || velocity.sqrMagnitude > maxSpeed * maxSpeed)
+        if (direction == Vector3.zero)
         {
             velocity -= acceleration * velocity.normalized * Time.deltaTime / 2;
+
+            if(driftAngle < driftSpeed)
+            {
+                driftAngle = 0;
+            }
+            else
+            {
+                driftAngle = driftAngle - Mathf.Sign(driftAngle) * driftSpeed;
+            }
         }
         else
         {
-            velocity += acceleration * direction.normalized * Time.deltaTime;
+            if (velocity.sqrMagnitude > maxSpeed * maxSpeed)
+            {
+                velocity -= acceleration * velocity.normalized * Time.deltaTime / 2;
+            }
+            else
+            {
+                velocity += acceleration * direction.normalized * Time.deltaTime;
+            }
+
+            transform.rotation = Quaternion.LookRotation(velocity, Vector3.up);
+
+            // Calculate drifting
+            float angle = Vector3.SignedAngle(velocity, direction, Vector3.up);
+            if (Mathf.Abs(angle) < maxDriftAngle) angle = 0; // Because it will never be exactly zero
+            angle = Mathf.Clamp(Mathf.Abs(angle), 0, driftSpeed) * Mathf.Sign(angle);            
+            if (Mathf.Abs(angle) < Mathf.Epsilon && Mathf.Abs(driftAngle) > Mathf.Epsilon)
+            {
+                angle = -Mathf.Clamp(Mathf.Abs(driftAngle), 0, driftSpeed) * Mathf.Sign(driftAngle);
+            }
+            driftAngle += angle;
         }
         velocity = Vector3.ClampMagnitude(velocity, 15);
+        driftAngle = Mathf.Clamp(Mathf.Abs(driftAngle), 0, maxDriftAngle) * Mathf.Sign(driftAngle);
 
-        transform.Translate(velocity * Time.fixedDeltaTime);
+        // Drift
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, driftAngle);
+
+        // Translate
+        transform.Translate(velocity * Time.fixedDeltaTime, Space.World);
     }
 
     private void randomizeKeys()
