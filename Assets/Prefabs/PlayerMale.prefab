@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4889605471817548}
-  - component: {fileID: 114489509608971406}
+  - component: {fileID: 114056511496146070}
   m_Layer: 0
   m_Name: PlayerMale
   m_TagString: Untagged
@@ -158,7 +158,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1122881373534604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.58, y: 0, z: -0.99999994}
+  m_LocalPosition: {x: 8.969999, y: 0, z: -0.99999994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4772857797328542}
@@ -182,7 +182,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4b0ae2d425d43e143a440d1956430266, type: 2}
+  - {fileID: 2100000, guid: d64ad3d626f500b4388421002ea4d4a2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -216,7 +216,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: e91ae571bb4d7a345ab4081c1f8fec57, type: 2}
+  - {fileID: 2100000, guid: 158cb78a0e7a69649a3f83b08ea6d9a9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -250,7 +250,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4acf75f000eec1249a1ffde59ec5d9d6, type: 2}
+  - {fileID: 2100000, guid: 269aa96b3b4e60744b18a59953a82524, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -284,7 +284,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: bdba6defca5cd874a9b1b659e6799c37, type: 2}
+  - {fileID: 2100000, guid: ab5436ec49c199a4996a86f67500c2a4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -368,7 +368,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114489509608971406
+--- !u!114 &114056511496146070
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1884081c4aaef6546aad29842a494a9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 0
 --- !u!135 &135380790182769306
 SphereCollider:
   m_ObjectHideFlags: 1
