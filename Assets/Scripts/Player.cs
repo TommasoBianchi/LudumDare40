@@ -119,7 +119,6 @@ public class Player : MonoBehaviour {
 
     private void respectBounds()
     {
-        Debug.Log(bounds.center);
         if (!bounds.Contains(transform.position))
         {
             transform.position = bounds.ClosestPoint(transform.position);

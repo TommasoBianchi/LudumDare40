@@ -23,10 +23,10 @@ public class MainSceneLoader : MonoBehaviour {
     {
 		if(Time.realtimeSinceStartup > targetTimeToStart)
         {
-            Debug.Log("Done");
             Time.timeScale = 1;
             player.gameObject.SetActive(true);
             loadingOverlay.gameObject.SetActive(false);
+            Destroy(gameObject);
         }
 	}
 }
