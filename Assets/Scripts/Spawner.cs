@@ -10,6 +10,7 @@ public class Spawner : MonoBehaviour {
     public float cooldownVariance;
     public float meanSpeed;
     public float speedVariance;
+    public float maxWalkedDistance;
 
     private float nextSpawnTime;
 
@@ -51,5 +52,13 @@ public class Spawner : MonoBehaviour {
         GameObjectPooler pool = gameObjectPools[Random.Range(0, gameObjectPools.Length)];
         GameObject go = pool.Instantiate(spawnPoint.position, transform.rotation, transform);
         go.GetComponent<Mover>().Speed = speedGaussianDistribution.Generate();
+
+        DestroyAfterDistance dad = go.GetComponent<DestroyAfterDistance>();
+        if(dad == null)
+        {
+            dad = go.AddComponent<DestroyAfterDistance>();
+        }
+        dad.distance = maxWalkedDistance;
+        dad.onDestroy = g => pool.Destroy(g);
     }
 }
