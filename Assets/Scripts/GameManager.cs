@@ -1,7 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-public static class GameManager {
+public static class GameManager
+{
+
+    static GameManager()
+    {
+        JSONManager.Save("MinigameSettings", minigameSettings);
+        minigameSettings = JSONManager.Load<Dictionary<string, Dictionary<string, float>>>("MinigameSettings");
+    }
+
+    #region Player
 
     public enum Drunkness
     {
@@ -38,4 +48,24 @@ public static class GameManager {
             this.policeLevel = policeLevel;
         }
     }
+
+    #endregion
+
+    #region Minigames
+
+    private static Dictionary<string, Dictionary<string, float>> minigameSettings = new Dictionary<string, Dictionary<string, float>>
+    {
+        { "DrinkItAll", new Dictionary<string, float>{ { "Speed", 1 } } },
+        { "GrabTheBeer", new Dictionary<string, float>{ { "", 0 } } },
+        { "Karaoke", new Dictionary<string, float>{ { "", 0 } } },
+        { "Darts", new Dictionary<string, float>{ { "", 0 } } },
+        { "DontFallDown", new Dictionary<string, float>{ { "", 0 } } }
+    };
+
+    public static float GetMinigameSetting(string minigameName, string settingKey)
+    {
+        return minigameSettings[minigameName][settingKey];
+    }
+
+    #endregion
 }

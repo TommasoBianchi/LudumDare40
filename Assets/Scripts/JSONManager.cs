@@ -11,7 +11,7 @@ public static class JSONManager {
         StreamWriter writer = new StreamWriter(basePath + name + ".json", false);
         writer.WriteLine(JsonConvert.SerializeObject(item, Formatting.Indented));
         writer.Close();
-
+        Debug.Log(name + " saved");
     }
 
     public static T Load<T>(string name)
