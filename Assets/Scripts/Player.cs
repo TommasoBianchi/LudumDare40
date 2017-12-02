@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-    private float speed = 10;
+    private Vector3 velocity = Vector3.zero;
+    private float acceleration = 25;
+    private float maxSpeed;
 
     private KeyCode upKey = KeyCode.W;
     private KeyCode downKey = KeyCode.S;
     private KeyCode rightKey = KeyCode.A;
     private KeyCode leftKey = KeyCode.D;
 
+    private float nextMaxSpeedRandomizationTime = 0;
     private float nextKeyRandomizationTime;
 
     private Dictionary<GameManager.Drunkness, DrunkMalus> drunkMaluses;
@@ -22,7 +25,7 @@ public class Player : MonoBehaviour {
         drunkMaluses.Add(GameManager.Drunkness.Low, new DrunkMalus(9, 1, 12, 4));
         drunkMaluses.Add(GameManager.Drunkness.Medium, new DrunkMalus(8, 2, 9, 3));
         drunkMaluses.Add(GameManager.Drunkness.High, new DrunkMalus(7, 3, 6, 2));
-        drunkMaluses.Add(GameManager.Drunkness.Dead, new DrunkMalus(6, 4, 3, 1));
+        drunkMaluses.Add(GameManager.Drunkness.Dead, new DrunkMalus(6, 8, 3, 1));
 
         DrunkMalus currentDrunkMalus = drunkMaluses[GameManager.DrunkLevel];
         nextKeyRandomizationTime = Time.time
@@ -52,9 +55,24 @@ public class Player : MonoBehaviour {
         if (Input.GetKey(leftKey)) direction.x++;
         if (Input.GetKey(rightKey)) direction.x--;
 
-        DrunkMalus currentDrunkMalus = drunkMaluses[GameManager.DrunkLevel];
-        float speed = GaussianDistribution.Generate(currentDrunkMalus.speedMean, currentDrunkMalus.speedVariance);
-        transform.Translate(direction.normalized * speed * Time.fixedDeltaTime);
+        if (Time.time > nextMaxSpeedRandomizationTime)
+        {
+            DrunkMalus currentDrunkMalus = drunkMaluses[GameManager.DrunkLevel];
+            maxSpeed = GaussianDistribution.Generate(currentDrunkMalus.speedMean, currentDrunkMalus.speedVariance);
+            nextMaxSpeedRandomizationTime = Time.time + GaussianDistribution.Generate(4, 1);
+        }
+
+        if (direction == Vector3.zero || velocity.sqrMagnitude > maxSpeed * maxSpeed)
+        {
+            velocity -= acceleration * velocity.normalized * Time.deltaTime / 2;
+        }
+        else
+        {
+            velocity += acceleration * direction.normalized * Time.deltaTime;
+        }
+        velocity = Vector3.ClampMagnitude(velocity, 15);
+
+        transform.Translate(velocity * Time.fixedDeltaTime);
     }
 
     private void randomizeKeys()
