@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour {
 
-    public Mover prefab;
-    public GameObject[] spawnPoints;
+    public Mover[] prefabs;
+    public Transform[] spawnPoints;
     public float meanCooldown;
     public float cooldownVariance;
     public float meanSpeed;
@@ -37,8 +37,9 @@ public class Spawner : MonoBehaviour {
 
     private void spawn()
     {
-        GameObject spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        GameObject go = Instantiate(prefab.gameObject, spawnPoint.transform.position, transform.rotation, transform);
-        go.GetComponent<Mover>().speed = speedGaussianDistribution.Generate();
+        Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        Mover prefab = prefabs[Random.Range(0, prefabs.Length)];
+        GameObject go = Instantiate(prefab.gameObject, spawnPoint.position, transform.rotation, transform);
+        go.GetComponent<Mover>().Speed = speedGaussianDistribution.Generate();
     }
 }

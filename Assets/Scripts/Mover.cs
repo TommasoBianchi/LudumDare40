@@ -4,13 +4,28 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour {
 
-    public float speed = 0;
-    
-	void Start () {
+    [SerializeField]
+    private float speed = 0;
+    public float Speed
+    {
+        get
+        {
+            return speed;
+        }
+
+        set
+        {
+            speed = value;
+            if (speed <= 0)
+                speed = 0.01f;
+        }
+    }
+
+    void Start () {
 		
 	}
 	
 	void FixedUpdate () {
-        transform.Translate(transform.forward * speed * Time.fixedDeltaTime);
+        transform.Translate((transform.rotation * transform.forward) * Speed * Time.fixedDeltaTime);
 	}
 }
