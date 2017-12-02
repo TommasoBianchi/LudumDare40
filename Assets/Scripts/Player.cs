@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+    public Bounds bounds;
+
     private Vector3 velocity = Vector3.zero;
     private float acceleration = 25;
     private float maxSpeed;
@@ -49,9 +51,10 @@ public class Player : MonoBehaviour {
         }
 
         move();
+        respectBounds();
 
         //GameManager.Drink(0.001f);
-	}
+    }
 
     private void move()
     {
@@ -112,6 +115,15 @@ public class Player : MonoBehaviour {
 
         // Translate
         transform.Translate(velocity * Time.fixedDeltaTime, Space.World);
+    }
+
+    private void respectBounds()
+    {
+        Debug.Log(bounds.center);
+        if (!bounds.Contains(transform.position))
+        {
+            transform.position = bounds.ClosestPoint(transform.position);
+        }
     }
 
     private void randomizeKeys()
