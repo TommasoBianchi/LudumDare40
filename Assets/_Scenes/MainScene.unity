@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44535434, g: 0.48936307, b: 0.5436173, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -539,6 +539,7 @@ MonoBehaviour:
   cooldownVariance: 2
   meanSpeed: 3
   speedVariance: 1
+  maxWalkedDistance: 150
 --- !u!4 &517826109
 Transform:
   m_ObjectHideFlags: 0
@@ -602,8 +603,9 @@ MonoBehaviour:
   - {fileID: 1182659071}
   meanCooldown: 7
   cooldownVariance: 2
-  meanSpeed: 6
+  meanSpeed: 9
   speedVariance: 0
+  maxWalkedDistance: 150
 --- !u!1 &577154553
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,13 +776,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 710762029}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0.12607859, y: -0.2566048, z: 0.03378265, w: 0.9576622}
+  m_LocalPosition: {x: 0, y: 300, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 15, y: -30, z: 0}
 --- !u!1 &736637632
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,7 +1180,7 @@ GameObject:
   - component: {fileID: 1176641593}
   - component: {fileID: 1176641594}
   m_Layer: 0
-  m_Name: 'SpawnerBottom '
+  m_Name: SpawnerTop
   m_TagString: Untagged
   m_Icon: {fileID: 571167235653111936, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1223,6 +1225,7 @@ MonoBehaviour:
   cooldownVariance: 2
   meanSpeed: 3
   speedVariance: 1
+  maxWalkedDistance: 150
 --- !u!1 &1182659070
 GameObject:
   m_ObjectHideFlags: 0
@@ -1641,7 +1644,7 @@ GameObject:
   - component: {fileID: 1335368118}
   - component: {fileID: 1335368119}
   m_Layer: 0
-  m_Name: 'SpawnerBottom '
+  m_Name: SpawnerTop
   m_TagString: Untagged
   m_Icon: {fileID: 571167235653111936, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1678,8 +1681,9 @@ MonoBehaviour:
   - {fileID: 899969998}
   meanCooldown: 7
   cooldownVariance: 2
-  meanSpeed: 7
+  meanSpeed: 10
   speedVariance: 0
+  maxWalkedDistance: 150
 --- !u!1 &1381599376
 GameObject:
   m_ObjectHideFlags: 0
@@ -1719,7 +1723,7 @@ GameObject:
   - component: {fileID: 1385499255}
   - component: {fileID: 1385499256}
   m_Layer: 0
-  m_Name: SpawnerBottom
+  m_Name: SpawnerTop
   m_TagString: Untagged
   m_Icon: {fileID: 571167235653111936, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1764,6 +1768,7 @@ MonoBehaviour:
   cooldownVariance: 2
   meanSpeed: 3
   speedVariance: 1
+  maxWalkedDistance: 150
 --- !u!1 &1411589873
 GameObject:
   m_ObjectHideFlags: 0
@@ -2285,6 +2290,7 @@ MonoBehaviour:
   cooldownVariance: 2
   meanSpeed: 3
   speedVariance: 1
+  maxWalkedDistance: 150
 --- !u!1 &1984111689
 GameObject:
   m_ObjectHideFlags: 0

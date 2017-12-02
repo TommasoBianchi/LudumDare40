@@ -18,12 +18,16 @@ public class Spawner : MonoBehaviour {
     private GaussianDistribution cooldownGaussianDistribution;
 
     private GameObjectPooler[] gameObjectPools;
+    private Transform spawnedObjectsParent;
 
     void Start ()
     {
         speedGaussianDistribution = new GaussianDistribution(meanSpeed, speedVariance);
         cooldownGaussianDistribution = new GaussianDistribution(meanCooldown, cooldownVariance);
         nextSpawnTime = Time.time + cooldownGaussianDistribution.Generate();
+
+        spawnedObjectsParent = new GameObject("Spawned Game Objects").transform;
+        spawnedObjectsParent.parent = transform;
 
         gameObjectPools = new GameObjectPooler[prefabs.Length];
         for (int i = 0; i < prefabs.Length; i++)
@@ -50,7 +54,7 @@ public class Spawner : MonoBehaviour {
     {
         Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
         GameObjectPooler pool = gameObjectPools[Random.Range(0, gameObjectPools.Length)];
-        GameObject go = pool.Instantiate(spawnPoint.position, transform.rotation, transform);
+        GameObject go = pool.Instantiate(spawnPoint.position, transform.rotation, spawnedObjectsParent);
         go.GetComponent<Mover>().Speed = speedGaussianDistribution.Generate();
 
         DestroyAfterDistance dad = go.GetComponent<DestroyAfterDistance>();
