@@ -27,6 +27,9 @@ public class Player : MonoBehaviour {
         drunkMaluses.Add(GameManager.Drunkness.High, new DrunkMalus(7, 3, 6, 2));
         drunkMaluses.Add(GameManager.Drunkness.Dead, new DrunkMalus(6, 8, 3, 1));
 
+        JSONManager.Save("DrunkMaluses", drunkMaluses);
+        drunkMaluses = JSONManager.Load<Dictionary<GameManager.Drunkness, DrunkMalus>>("DrunkMaluses");
+
         DrunkMalus currentDrunkMalus = drunkMaluses[GameManager.DrunkLevel];
         nextKeyRandomizationTime = Time.time
                 + GaussianDistribution.Generate(currentDrunkMalus.keyRandomizationMeanTime, currentDrunkMalus.keyRandomizationVarianceTime);

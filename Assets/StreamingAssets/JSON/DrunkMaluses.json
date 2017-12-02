@@ -1,0 +1,32 @@
+{
+  "None": {
+    "speedMean": 10.0,
+    "speedVariance": 0.0,
+    "keyRandomizationMeanTime": 3.40282347E+38,
+    "keyRandomizationVarianceTime": 0.0
+  },
+  "Low": {
+    "speedMean": 9.0,
+    "speedVariance": 1.0,
+    "keyRandomizationMeanTime": 12.0,
+    "keyRandomizationVarianceTime": 4.0
+  },
+  "Medium": {
+    "speedMean": 8.0,
+    "speedVariance": 2.0,
+    "keyRandomizationMeanTime": 9.0,
+    "keyRandomizationVarianceTime": 3.0
+  },
+  "High": {
+    "speedMean": 7.0,
+    "speedVariance": 3.0,
+    "keyRandomizationMeanTime": 6.0,
+    "keyRandomizationVarianceTime": 2.0
+  },
+  "Dead": {
+    "speedMean": 6.0,
+    "speedVariance": 8.0,
+    "keyRandomizationMeanTime": 3.0,
+    "keyRandomizationVarianceTime": 1.0
+  }
+}
