@@ -6,8 +6,13 @@ public class MouseFollower : MonoBehaviour {
 
     private float acceleration;
     private float maxSpeed;
+    private float randomForce;
+    private float sipAmount;
+
     private Vector3 oldMousePosition;
     private Vector3 velocity = Vector3.zero;
+
+    private Beer beer;
     
 	void Start ()
     {
@@ -16,19 +21,30 @@ public class MouseFollower : MonoBehaviour {
         Vector3 startingPosition = Camera.main.ScreenToWorldPoint(mousePosition);
         startingPosition.z = transform.position.z;
         transform.position = startingPosition;
+
+        beer = FindObjectOfType<Beer>();
+
         maxSpeed = 150;//GameManager.GetMinigameSetting("DrinkItAll", "Speed");
-        acceleration = 150;
+        acceleration = 50;
+        randomForce = 80;
+        sipAmount = 3;
 
         oldMousePosition = Input.mousePosition;
-
-        // Test
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Confined;
     }
 
     private void Update()
     {
-        if(maxSpeed == 0)
+        move();
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            beer.DrinkBeer(1 / sipAmount);
+        }
+    }
+
+    private void move()
+    {
+        if (maxSpeed == 0)
         {
             smoothFollow();
         }
@@ -61,7 +77,8 @@ public class MouseFollower : MonoBehaviour {
         }
         else
         {
-            //velocity -= velocity.normalized * acceleration / 10 * Time.deltaTime;
+            Vector3 deltaRandom = new Vector3(Mathf.Sin(Time.frameCount), Mathf.Cos(Time.frameCount), 0);
+            velocity += deltaRandom * randomForce * Time.deltaTime;
         }
         Vector3.ClampMagnitude(velocity, maxSpeed);
 
@@ -71,6 +88,10 @@ public class MouseFollower : MonoBehaviour {
            nextPositionOnScreen.y > 0 && nextPositionOnScreen.y < Screen.height)
         {
             transform.position = nextPosition;
+        }
+        else
+        {
+            velocity = Vector3.zero;
         }
     }
 }
