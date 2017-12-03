@@ -12,6 +12,8 @@ public class Note : MonoBehaviour {
     public Karaoke karaoke;
     [HideInInspector]
     public Note nextNote;
+    [HideInInspector]
+    public bool isLastNote = false;
 
     private static Note currentNoteToCatch;
     
@@ -61,9 +63,11 @@ public class Note : MonoBehaviour {
         }
     }
 
-    private IEnumerator changeNote()
+    private void OnDestroy()
     {
-        yield return null;
-        currentNoteToCatch = nextNote;
+        if (isLastNote)
+        {
+            karaoke.SongFinished();
+        }
     }
 }

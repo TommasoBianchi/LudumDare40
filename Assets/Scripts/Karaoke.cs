@@ -119,6 +119,18 @@ public class Karaoke : MonoBehaviour
         pointsText.text = (int.Parse(pointsText.text) - correctNotePoints).ToString();
     }
 
+    public void SongFinished()
+    {
+        if (int.Parse(pointsText.text) >= int.Parse(targetPointsText.text))
+        {
+            FindObjectOfType<MinigameManager>().Win();
+        }
+        else
+        {
+            FindObjectOfType<MinigameManager>().Lose();
+        }
+    }
+
     private void spawnNote()
     {
         int position = Random.Range(0, spawnPoints.Length);
@@ -142,6 +154,7 @@ public class Karaoke : MonoBehaviour
         else
         {
             nextNoteSpawnTime = float.MaxValue;
+            newNote.isLastNote = true;
         }
     }
 }
