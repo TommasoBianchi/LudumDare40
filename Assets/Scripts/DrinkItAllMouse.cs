@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MouseFollower : MonoBehaviour {
+public class DrinkItAllMouse : MonoBehaviour {
+
+    public Bounds face;
+    public Transform drinkPoint;
 
     private float acceleration;
     private float maxSpeed;
@@ -24,21 +27,35 @@ public class MouseFollower : MonoBehaviour {
 
         beer = FindObjectOfType<Beer>();
 
-        maxSpeed = 150;//GameManager.GetMinigameSetting("DrinkItAll", "Speed");
-        acceleration = 50;
-        randomForce = 80;
-        sipAmount = 3;
+        maxSpeed = GameManager.GetMinigameSetting("DrinkItAll", "MaxSpeed");
+        acceleration = GameManager.GetMinigameSetting("DrinkItAll", "Acceleration");
+        randomForce = GameManager.GetMinigameSetting("DrinkItAll", "RandomForce");
+        sipAmount = GameManager.GetMinigameSetting("DrinkItAll", "SipAmount");
 
         oldMousePosition = Input.mousePosition;
     }
 
     private void Update()
     {
+        if(beer.beerLevel <= 0)
+        {
+            FindObjectOfType<MinigameManager>().Win();
+            this.enabled = false;
+        }
+
         move();
 
         if (Input.GetMouseButtonDown(0))
         {
-            beer.DrinkBeer(1 / sipAmount);
+            if (face.Contains(drinkPoint.position))
+            {
+                beer.DrinkBeer(1 / sipAmount);
+            }
+            else
+            {
+                FindObjectOfType<MinigameManager>().Lose();
+                this.enabled = false;
+            }
         }
     }
 
