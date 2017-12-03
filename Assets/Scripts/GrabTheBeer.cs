@@ -9,14 +9,15 @@ public class GrabTheBeer : MonoBehaviour {
     public GameObject beerPrefab;
     public float beerStatusMean;
     public float beerStatusVariance;
+    public GameObject Arm;
 
     private int beerDelay;
     private int status;
     private float spawnBeerTimer;
     private bool beerLaunched;
+    
 
-
-	void Start () {
+    void Start () {
 
         spawnBeerTimer = Time.time + 3;
         beerLaunched = false;
@@ -41,7 +42,8 @@ public class GrabTheBeer : MonoBehaviour {
         newBeer.status = Random.Range(0, 101);
 
         float myBeerChance = GameManager.GetMinigameSetting("GrabTheBeer", "MyBeer");
-        
+
+        newBeer.Arm = Arm;
         newBeer.GetComponent<Mover>().Speed = GameManager.GetMinigameSetting("GrabTheBeer", "Speed");
 
         if (newBeer.status > myBeerChance)
