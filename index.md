@@ -5,9 +5,9 @@ The more you have, the worse it is
 ## How to play
 
 * [WebGL Player](WebGL/index.html)
-* [Windows](https://github.com/TommasoBianchi/LudumDare40/raw/gh-pages/Builds/windows.zip)
-* [macOSX](Builds/macosx.zip)
-* [Linux](Builds/linux.zip)
+* Download for [Windows](https://github.com/TommasoBianchi/LudumDare40/raw/gh-pages/Builds/windows.zip)
+* Download for [MacOSX](Builds/macosx.zip)
+* Download for [Linux](Builds/linux.zip)
 
 ## Key bindings
 
