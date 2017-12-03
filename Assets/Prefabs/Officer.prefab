@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33994672672659314}
   - component: {fileID: 136337371086006572}
   - component: {fileID: 23246650509802078}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 33103637622389716}
   - component: {fileID: 136695332365865464}
   - component: {fileID: 23721703897179154}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cap (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 33819980516081558}
   - component: {fileID: 136957186359473176}
   - component: {fileID: 23411209594971466}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4424155221818332}
   - component: {fileID: 114808500480149496}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Officer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 33793058714881216}
   - component: {fileID: 65788996082851038}
   - component: {fileID: 23704348063649480}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 33263925410702158}
   - component: {fileID: 65292668806555330}
   - component: {fileID: 23133082961669044}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4899998625278306}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 33648459912147732}
   - component: {fileID: 65341631003326368}
   - component: {fileID: 23942251680655940}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 33764877893036512}
   - component: {fileID: 135938399027854928}
   - component: {fileID: 23631182332311976}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Hair
   m_TagString: Untagged
   m_Icon: {fileID: 0}

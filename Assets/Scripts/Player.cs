@@ -49,8 +49,19 @@ public class Player : MonoBehaviour {
 
         move();
         respectBounds();
+    }
 
-        //GameManager.Drink(0.001f);
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Car"))
+        {
+            activatePlayerCollisions();
+            GetComponent<Rigidbody>().useGravity = true;
+            Vector3 forceDirection = transform.position - collision.contacts[0].point;
+            GetComponent<Rigidbody>().AddForce(forceDirection.normalized * 1000, ForceMode.Impulse);
+            GetComponent<Rigidbody>().AddForce(Vector3.up * 1000, ForceMode.Impulse);
+            this.enabled = false;
+        }
     }
 
     private void move()
@@ -166,6 +177,15 @@ public class Player : MonoBehaviour {
         leftKey = keyCodes[3];
 
         uiManager.UpdateKeyBindings(keyCodes);
+    }
+
+    private void activatePlayerCollisions()
+    {
+        int mylayer = gameObject.layer;
+        for (int i = 0; i < 32; i++)
+        {
+            Physics.IgnoreLayerCollision(mylayer, i, false);
+        }
     }
 
     private struct DrunkMalus

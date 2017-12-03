@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4889605471817548}
   - component: {fileID: 114056511496146070}
   - component: {fileID: 114134070025158404}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PlayerMale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 33885495287532544}
   - component: {fileID: 65306868015177524}
   - component: {fileID: 23893964610433012}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 33607967090173870}
   - component: {fileID: 65838018880970008}
   - component: {fileID: 23397029437701530}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 33220316067834332}
   - component: {fileID: 65729708474247130}
   - component: {fileID: 23551994532209022}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4309686740560044}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 33072631989458148}
   - component: {fileID: 135380790182769306}
   - component: {fileID: 23975961939888370}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Hair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
