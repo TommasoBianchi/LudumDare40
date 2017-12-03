@@ -16,7 +16,6 @@ public class MinigameManager : MonoBehaviour {
         Time.timeScale = 0;
         winPanel.gameObject.SetActive(true);
         GameManager.Drink(drunkAmountIfWin);
-        GameManager.SelectNewBar();
         StartCoroutine(returnToMainScene());
     }
 
@@ -29,7 +28,7 @@ public class MinigameManager : MonoBehaviour {
 
     IEnumerator returnToMainScene()
     {
-        for (int i = 0; i < 400; i++)
+        for (int i = 0; i < 100; i++)
         {
             yield return null;
         }

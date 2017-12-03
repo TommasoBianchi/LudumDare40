@@ -22,6 +22,8 @@ public class Bar : MonoBehaviour {
         {
             selectedBarLight.SetActive(false);
         }
+
+        setupPeopleOnRoof();
 	}
 	
 	void Update ()
@@ -45,4 +47,12 @@ public class Bar : MonoBehaviour {
             }
         }
 	}
+
+    private void setupPeopleOnRoof()
+    {
+        foreach (BoxBounder bounder in gameObject.GetComponentsInChildren<BoxBounder>())
+        {
+            bounder.bounds.center = transform.position;
+        }
+    }
 }

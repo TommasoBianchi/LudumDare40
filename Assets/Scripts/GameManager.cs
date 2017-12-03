@@ -87,6 +87,7 @@ public static class GameManager
     {
         PlayerSpawnPosition = player.position;
         SceneManager.LoadScene(barMinigames[bar.name]);
+        GameManager.SelectNewBar();
     }
 
     public static void SelectNewBar()
