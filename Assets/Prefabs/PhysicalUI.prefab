@@ -2211,6 +2211,11 @@ MonoBehaviour:
   beerSlider: {fileID: 114390024236633152}
   healthBar: {fileID: 4414100242543376}
   drunkTagText: {fileID: 102887693042741880}
+  keyBindings:
+  - {fileID: 102715092317024066}
+  - {fileID: 102874476520162916}
+  - {fileID: 102274959946098366}
+  - {fileID: 102914746515625848}
 --- !u!124 &124930613524394308
 Behaviour:
   m_ObjectHideFlags: 1
