@@ -51,6 +51,9 @@ public static class GameManager
 
         // Load the main menu
         SceneManager.LoadScene("MainMenu");
+
+        PlayerSpawnPosition = Vector3.zero;
+        playerStats = new PlayerStats(0, 1, 0);
     }
 
     private struct PlayerStats

@@ -148,7 +148,7 @@ public class Player : MonoBehaviour {
         //    keyCodes[j] = tmp;
         //}
 
-        float randomChoice = Random.Range(0, 1);
+        float randomChoice = Random.Range(0f, 1f);
         if(randomChoice <= 0.35f)
         {
             // Invert X axis
