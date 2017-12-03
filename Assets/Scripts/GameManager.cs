@@ -1,30 +1,15 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public static class GameManager
 {
 
     static GameManager()
     {
-        //minigameSettings = new Dictionary<string, Dictionary<string, float[]>>
-        //{
-        //    { "DrinkItAll", new Dictionary<string, float[]>() },
-        //    { "GrabTheBeer", new Dictionary<string, float[]>() },
-        //    { "Karaoke", new Dictionary<string, float[]>() },
-        //    { "Darts", new Dictionary<string, float[]>() },
-        //    { "DontFallDown", new Dictionary<string, float[]>() }
-        //};
-
-        //minigameSettings["DrinkItAll"]["SipAmount"] = new float[] { 1, 2, 3, 4, 5 };
-
-        //foreach (var item in minigameSettings)
-        //{
-        //    JSONManager.Save("Minigames/" + item.Key, item.Value);
-        //}
-        //JSONManager.Save("MinigameSettings", minigameSettings);
-        //minigameSettings = JSONManager.Load<Dictionary<string, Dictionary<string, float[]>>>("MinigameSettings");
-
+        PlayerSpawnPosition = Vector3.zero;
         minigameSettings = JSONManager.LoadDirectory<Dictionary<string, float[]>>("Minigames");
+        barMinigames = JSONManager.Load<Dictionary<string, string>>("BarMinigames");
     }
 
     #region Player
@@ -40,10 +25,12 @@ public static class GameManager
 
     private static PlayerStats playerStats = new PlayerStats(0, 1, 0);
 
-    //public static float DrunkLevel { get { return playerStats.drunkLevel; } }
+    public static float RawDrunkLevel { get { return playerStats.drunkLevel; } }
     public static Drunkness DrunkLevel { get { return (Drunkness)Mathf.Clamp(Mathf.FloorToInt(playerStats.drunkLevel / 0.25f), 0, 4); } }
     public static float Health { get { return playerStats.health; } }
     public static float PoliceLevel { get { return playerStats.policeLevel; } }
+
+    public static Vector3 PlayerSpawnPosition { get; private set; }
 
     public static void Drink(float amount)
     {
@@ -74,6 +61,23 @@ public static class GameManager
     public static float GetMinigameSetting(string minigameName, string settingKey)
     {
         return minigameSettings[minigameName][settingKey][(int)DrunkLevel];
+    }
+
+    #endregion
+
+    #region Bars
+
+    private static Dictionary<string, string> barMinigames;
+
+    public static string GetMinigame(string barName)
+    {
+        return barMinigames[barName];
+    }
+
+    public static void EnterBar(Bar bar, Transform player)
+    {
+        PlayerSpawnPosition = player.position;
+        SceneManager.LoadScene(barMinigames[bar.name]);
     }
 
     #endregion
