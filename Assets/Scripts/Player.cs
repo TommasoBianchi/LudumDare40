@@ -126,12 +126,38 @@ public class Player : MonoBehaviour {
     {
         KeyCode[] keyCodes = { upKey, downKey, rightKey, leftKey };
 
-        for (int i = keyCodes.Length - 1; i >= 0; i--)
+        //for (int i = keyCodes.Length - 1; i >= 0; i--)
+        //{
+        //    int j = Random.Range(0, i + 1);
+        //    KeyCode tmp = keyCodes[i];
+        //    keyCodes[i] = keyCodes[j];
+        //    keyCodes[j] = tmp;
+        //}
+
+        float randomChoice = Random.Range(0, 1);
+        if(randomChoice <= 0.35f)
         {
-            int j = Random.Range(0, i + 1);
-            KeyCode tmp = keyCodes[i];
-            keyCodes[i] = keyCodes[j];
-            keyCodes[j] = tmp;
+            // Invert X axis
+            KeyCode tmp = keyCodes[2];
+            keyCodes[2] = keyCodes[3];
+            keyCodes[3] = tmp;
+        }
+        else if(randomChoice <= 0.7f)
+        {
+            // Invert Y axis
+            KeyCode tmp = keyCodes[0];
+            keyCodes[0] = keyCodes[1];
+            keyCodes[1] = tmp;
+        }
+        else
+        {
+            // Invert both axis
+            KeyCode tmp = keyCodes[0];
+            keyCodes[0] = keyCodes[1];
+            keyCodes[1] = tmp;
+            tmp = keyCodes[2];
+            keyCodes[2] = keyCodes[3];
+            keyCodes[3] = tmp;
         }
 
         upKey = keyCodes[0];
