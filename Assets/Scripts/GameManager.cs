@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public static class GameManager
@@ -7,8 +6,25 @@ public static class GameManager
 
     static GameManager()
     {
-        JSONManager.Save("MinigameSettings", minigameSettings);
-        minigameSettings = JSONManager.Load<Dictionary<string, Dictionary<string, float>>>("MinigameSettings");
+        //minigameSettings = new Dictionary<string, Dictionary<string, float[]>>
+        //{
+        //    { "DrinkItAll", new Dictionary<string, float[]>() },
+        //    { "GrabTheBeer", new Dictionary<string, float[]>() },
+        //    { "Karaoke", new Dictionary<string, float[]>() },
+        //    { "Darts", new Dictionary<string, float[]>() },
+        //    { "DontFallDown", new Dictionary<string, float[]>() }
+        //};
+
+        //minigameSettings["DrinkItAll"]["SipAmount"] = new float[] { 1, 2, 3, 4, 5 };
+
+        //foreach (var item in minigameSettings)
+        //{
+        //    JSONManager.Save("Minigames/" + item.Key, item.Value);
+        //}
+        //JSONManager.Save("MinigameSettings", minigameSettings);
+        //minigameSettings = JSONManager.Load<Dictionary<string, Dictionary<string, float[]>>>("MinigameSettings");
+
+        minigameSettings = JSONManager.LoadDirectory<Dictionary<string, float[]>>("Minigames");
     }
 
     #region Player
@@ -53,18 +69,11 @@ public static class GameManager
 
     #region Minigames
 
-    private static Dictionary<string, Dictionary<string, float>> minigameSettings = new Dictionary<string, Dictionary<string, float>>
-    {
-        { "DrinkItAll", new Dictionary<string, float>{ { "Speed", 1 } } },
-        { "GrabTheBeer", new Dictionary<string, float>{ { "", 0 } } },
-        { "Karaoke", new Dictionary<string, float>{ { "", 0 } } },
-        { "Darts", new Dictionary<string, float>{ { "", 0 } } },
-        { "DontFallDown", new Dictionary<string, float>{ { "", 0 } } }
-    };
+    private static Dictionary<string, Dictionary<string, float[]>> minigameSettings;
 
     public static float GetMinigameSetting(string minigameName, string settingKey)
     {
-        return minigameSettings[minigameName][settingKey];
+        return minigameSettings[minigameName][settingKey][(int)DrunkLevel];
     }
 
     #endregion

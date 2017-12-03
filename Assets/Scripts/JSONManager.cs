@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using Newtonsoft.Json;
 using UnityEngine;
+using System.Collections.Generic;
 
 public static class JSONManager {
 
@@ -20,5 +21,18 @@ public static class JSONManager {
         string s = reader.ReadToEnd();
         reader.Close();
         return JsonConvert.DeserializeObject<T>(s);
+    }
+
+    public static Dictionary<string, T> LoadDirectory<T>(string directory)
+    {
+        Dictionary<string, T> result = new Dictionary<string, T>();
+
+        foreach (string filePath in Directory.GetFiles(basePath + directory, "*.json"))
+        {
+            string fileName = Path.GetFileNameWithoutExtension(filePath);
+            result.Add(fileName, Load<T>(directory + "/" + fileName));
+        }
+
+        return result;
     }
 }

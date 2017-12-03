@@ -5,23 +5,18 @@ using UnityEngine;
 public class Beer : MonoBehaviour {
 
     public Transform beer;
-    public Transform glass;
+    
+    public float beerLevel { get; private set; }
 
-    public float beerLevel;
+    private void Start()
+    {
+        beerLevel = beer.localScale.y;
+    }
 
     public void DrinkBeer(float amount)
     {
         beerLevel -= amount;
 
-        beer.transform.localScale = new Vector3(1, beerLevel, 1);
-        beer.transform.Translate(0, -0.5f * amount, 0);
-
-        glass.transform.localScale = new Vector3(1, 1 - beerLevel, 1);
-        glass.transform.Translate(0, -0.4f * amount, 0);
-
-        if (beerLevel <= 0)
-        {
-
-        }
+        beer.localScale = new Vector3(1, beerLevel, 1);
     }
 }
