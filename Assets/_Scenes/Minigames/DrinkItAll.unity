@@ -555,7 +555,7 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!114 &882618532 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114956440327034178, guid: 78758add14a0afb4aac1812a9d1ace83,
+  m_PrefabParentObject: {fileID: 114501649510093626, guid: 78758add14a0afb4aac1812a9d1ace83,
     type: 2}
   m_PrefabInternal: {fileID: 2046878246}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -589,6 +589,11 @@ Transform:
   m_Father: {fileID: 528928452}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1365768738 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1878849808952774, guid: 78758add14a0afb4aac1812a9d1ace83,
+    type: 2}
+  m_PrefabInternal: {fileID: 2046878246}
 --- !u!1001 &1471455472
 Prefab:
   m_ObjectHideFlags: 0
@@ -984,6 +989,12 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1642860048 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114956440327034178, guid: 78758add14a0afb4aac1812a9d1ace83,
+    type: 2}
+  m_PrefabInternal: {fileID: 2046878246}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1789901075
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,6 +1093,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114700177815540430, guid: 793ad08a626878c4aaf9ae0bc4cef07e,
+        type: 2}
+      propertyPath: scriptsToDisableAtStart.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4216426402060534, guid: 793ad08a626878c4aaf9ae0bc4cef07e, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1124,6 +1140,25 @@ Prefab:
       propertyPath: losePanel
       value: 
       objectReference: {fileID: 882618532}
+    - target: {fileID: 114700177815540430, guid: 793ad08a626878c4aaf9ae0bc4cef07e,
+        type: 2}
+      propertyPath: startPanel
+      value: 
+      objectReference: {fileID: 1642860048}
+    - target: {fileID: 114700177815540430, guid: 793ad08a626878c4aaf9ae0bc4cef07e,
+        type: 2}
+      propertyPath: countdown
+      value: 
+      objectReference: {fileID: 1365768738}
+    - target: {fileID: 1767114294935980, guid: 793ad08a626878c4aaf9ae0bc4cef07e, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114700177815540430, guid: 793ad08a626878c4aaf9ae0bc4cef07e,
+        type: 2}
+      propertyPath: scriptsToDisableAtStart.Array.data[0]
+      value: 
+      objectReference: {fileID: 528928453}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 793ad08a626878c4aaf9ae0bc4cef07e, type: 2}
   m_IsPrefabParent: 0
@@ -1137,12 +1172,12 @@ Prefab:
     - target: {fileID: 224813681545956490, guid: 78758add14a0afb4aac1812a9d1ace83,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 478
+      value: 505
       objectReference: {fileID: 0}
     - target: {fileID: 224813681545956490, guid: 78758add14a0afb4aac1812a9d1ace83,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 364.5
+      value: 284
       objectReference: {fileID: 0}
     - target: {fileID: 224813681545956490, guid: 78758add14a0afb4aac1812a9d1ace83,
         type: 2}
@@ -1223,6 +1258,16 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224581609047675566, guid: 78758add14a0afb4aac1812a9d1ace83,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 284
+      objectReference: {fileID: 0}
+    - target: {fileID: 224074522024162582, guid: 78758add14a0afb4aac1812a9d1ace83,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -284
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 78758add14a0afb4aac1812a9d1ace83, type: 2}

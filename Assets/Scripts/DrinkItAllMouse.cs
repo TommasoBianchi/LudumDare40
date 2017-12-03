@@ -19,12 +19,6 @@ public class DrinkItAllMouse : MonoBehaviour {
     
 	void Start ()
     {
-        //Vector3 mousePosition = Input.mousePosition;
-        //mousePosition.z = Camera.main.transform.position.z - transform.position.z;
-        //Vector3 startingPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        //startingPosition.z = transform.position.z;
-        //transform.position = startingPosition;
-
         beer = FindObjectOfType<Beer>();
 
         maxSpeed = GameManager.GetMinigameSetting("DrinkItAll", "MaxSpeed");
