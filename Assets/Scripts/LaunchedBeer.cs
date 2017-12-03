@@ -7,6 +7,7 @@ public class LaunchedBeer: MonoBehaviour {
     public float status;
     public GameObject MyBeer;
     public GameObject NotMyBeer;
+    public GameObject Arm;
     private float myBeerChance;
     private float vanishDistance;
     private bool vanished;
@@ -53,9 +54,12 @@ public class LaunchedBeer: MonoBehaviour {
 
     private void Grab()
     {
+        Arm.GetComponent<Animator>().SetTrigger("Grab");
+
         if ((gameObject.transform.position.x < -8 && gameObject.transform.position.x > -11) && status <= myBeerChance)
         {
             FindObjectOfType<MinigameManager>().Win();
+            
         }
 
         else if ((gameObject.transform.position.x < -8 && gameObject.transform.position.x > -11) && status > myBeerChance)
