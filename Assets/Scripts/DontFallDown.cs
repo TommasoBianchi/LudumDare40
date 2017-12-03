@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DontFallDown : MonoBehaviour {
 
@@ -11,11 +12,13 @@ public class DontFallDown : MonoBehaviour {
     public float sliderLength;
 
     public Transform player;
+    public Text timerText;
 
     private float handleVelocity;
     private float force;
     private float inertia;
     private float losePercentage;
+    private float remainingTime;
 
     void Start ()
     {
@@ -23,6 +26,7 @@ public class DontFallDown : MonoBehaviour {
         inertia = GameManager.GetMinigameSetting("DontFallDown", "Inertia");
         handleVelocity = GaussianDistribution.Generate(0, GameManager.GetMinigameSetting("DontFallDown", "StartingVelocityVariance"));
         losePercentage = GameManager.GetMinigameSetting("DontFallDown", "LosePercentage");
+        remainingTime = GameManager.GetMinigameSetting("DontFallDown", "Time");
 
         sliderCenter.localScale = new Vector3(1 - losePercentage, 1, 1);
         sliderSX.localScale = new Vector3(losePercentage / 2, 1, 1);
@@ -31,6 +35,16 @@ public class DontFallDown : MonoBehaviour {
 	
 	void Update ()
     {
+        remainingTime -= Time.deltaTime;
+        timerText.text = remainingTime.ToString("0.0");
+        if(remainingTime <= 0)
+        {
+            // Win
+            timerText.text = "0";
+            FindObjectOfType<MinigameManager>().Win();
+            this.enabled = false;
+        }
+
         // User add velocity to handle
         if (Input.GetKey(KeyCode.D))
         {
