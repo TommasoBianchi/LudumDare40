@@ -61,6 +61,7 @@ public class Player : MonoBehaviour {
             GetComponent<Rigidbody>().AddForce(forceDirection.normalized * 1000, ForceMode.Impulse);
             GetComponent<Rigidbody>().AddForce(Vector3.up * 1000, ForceMode.Impulse);
             this.enabled = false;
+            uiManager.PlayGameOverAnimation();
         }
     }
 

@@ -38,6 +38,14 @@ public static class GameManager
         playerStats.drunkLevel += amount;
     }
 
+    public static void GameOver()
+    {
+        // Print the highscore
+
+        // Load the main menu
+        SceneManager.LoadScene("MainMenu");
+    }
+
     private struct PlayerStats
     {
         public float drunkLevel;

@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour {
     public Transform healthBar;
     public TextMesh drunkTagText;
     public TextMesh[] keyBindings;
+    public GameObject gameOverOverlay;
 
     private string[] drunkTags;
     
@@ -24,6 +25,22 @@ public class UIManager : MonoBehaviour {
         {
             keyBindings[i].text = keyCodes[i].ToString();
         }
+    }
+
+    public void PlayGameOverAnimation()
+    {
+        gameOverOverlay.SetActive(true);
+        StartCoroutine(gameOver());
+    }
+
+    private IEnumerator gameOver()
+    {
+        for (int i = 0; i < 1000; i++)
+        {
+            yield return null;
+        }
+
+        GameManager.GameOver();
     }
 
     private void updateDrunknessIndicator()
