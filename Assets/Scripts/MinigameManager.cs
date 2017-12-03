@@ -9,10 +9,13 @@ public class MinigameManager : MonoBehaviour {
     public Image winPanel;
     public Image losePanel;
 
+    private float drunkAmountIfWin = 0.1f;
+
     public void Win()
     {
         Time.timeScale = 0;
         winPanel.gameObject.SetActive(true);
+        GameManager.Drink(drunkAmountIfWin);
         StartCoroutine(returnToMainScene());
     }
 
