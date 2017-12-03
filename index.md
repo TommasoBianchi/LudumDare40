@@ -5,7 +5,7 @@ The more you have, the worse it is
 ## How to play
 
 * [WebGL Player](WebGL/index.html)
-* [Windows](Builds/windows.zip)
+* [Windows](https://github.com/TommasoBianchi/LudumDare40/raw/gh-pages/Builds/windows.zip)
 * [macOSX](Builds/macosx.zip)
 * [Linux](Builds/linux.zip)
 
