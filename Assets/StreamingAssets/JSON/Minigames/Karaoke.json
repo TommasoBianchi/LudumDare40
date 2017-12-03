@@ -1,1 +1,44 @@
-{}
+{
+	"KeyClusters": [
+		1,
+		2,
+		3,
+		4,
+		4
+	],
+	"SongLengthMean": [
+		10,
+		20,
+		30,
+		40,
+		50
+	],
+	"SongLengthVariance": [
+		2,
+		4,
+		6,
+		8,
+		10
+	],
+	"NoteSpawnCooldownMean": [
+		2.2,
+		1.8,
+		1.4,
+		1,
+		0.6
+	],
+	"NoteSpawnCooldownVariance": [
+		0,
+		0.1,
+		0.2,
+		0.3,
+		0.4
+	],
+	"TargetPercentage": [
+		0.6,
+		0.7,
+		0.8,
+		0.8,
+		0.9
+	]
+}
