@@ -8,12 +8,17 @@ public class MinigameManager : MonoBehaviour {
 
     public Image winPanel;
     public Image losePanel;
+    public bool freezeTime = true;
 
     private float drunkAmountIfWin = 0.1f;
 
     public void Win()
     {
-        Time.timeScale = 0;
+        if (freezeTime)
+        {
+            Time.timeScale = 0;
+        }
+        
         winPanel.gameObject.SetActive(true);
         GameManager.Drink(drunkAmountIfWin);
         StartCoroutine(returnToMainScene());
@@ -21,7 +26,11 @@ public class MinigameManager : MonoBehaviour {
 
     public void Lose()
     {
-        Time.timeScale = 0;
+        if (freezeTime)
+        {
+            Time.timeScale = 0;
+        }
+
         losePanel.gameObject.SetActive(true);
         StartCoroutine(returnToMainScene());
     }
