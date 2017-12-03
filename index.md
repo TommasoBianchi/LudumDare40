@@ -5,7 +5,7 @@
 
 ## WebGL Player
 
-[Click here](webgl.html)
+[Click here](WebGL/index.html)
 
 ## Downloads
 
