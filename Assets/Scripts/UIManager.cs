@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour {
     public Beer beerSlider;
     public Transform healthBar;
     public TextMesh drunkTagText;
+    public TextMesh[] keyBindings;
 
     private string[] drunkTags;
     
@@ -15,6 +16,14 @@ public class UIManager : MonoBehaviour {
         drunkTags = JSONManager.Load<string[]>("DrunkTags");
         updateDrunknessIndicator();
         updateHealthIndicator();
+    }
+
+    public void UpdateKeyBindings(KeyCode[] keyCodes)
+    {
+        for (int i = 0; i < keyCodes.Length; i++)
+        {
+            keyBindings[i].text = keyCodes[i].ToString();
+        }
     }
 
     private void updateDrunknessIndicator()
