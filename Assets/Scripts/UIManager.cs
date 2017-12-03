@@ -9,6 +9,9 @@ public class UIManager : MonoBehaviour {
     public TextMesh drunkTagText;
     public TextMesh[] keyBindings;
     public GameObject gameOverOverlay;
+    public float gameOverOverlayDuration;
+
+    private float gameOverFinishTime;
 
     private string[] drunkTags;
     
@@ -30,12 +33,13 @@ public class UIManager : MonoBehaviour {
     public void PlayGameOverAnimation()
     {
         gameOverOverlay.SetActive(true);
+        gameOverFinishTime = Time.time + gameOverOverlayDuration;
         StartCoroutine(gameOver());
     }
 
     private IEnumerator gameOver()
     {
-        for (int i = 0; i < 1000; i++)
+        while(Time.time < gameOverFinishTime)
         {
             yield return null;
         }

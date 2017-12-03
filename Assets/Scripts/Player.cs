@@ -26,6 +26,8 @@ public class Player : MonoBehaviour {
     
 	void Start ()
     {
+        deactivatePlayerCollisions();
+
         uiManager = FindObjectOfType<UIManager>();
 
         transform.position = GameManager.PlayerSpawnPosition;
@@ -178,6 +180,19 @@ public class Player : MonoBehaviour {
         leftKey = keyCodes[3];
 
         uiManager.UpdateKeyBindings(keyCodes);
+    }
+
+    private void deactivatePlayerCollisions()
+    {
+        int mylayer = gameObject.layer;
+        int carLayer = LayerMask.NameToLayer("Car");
+        for (int i = 0; i < 32; i++)
+        {
+            if(i != carLayer)
+            {
+                Physics.IgnoreLayerCollision(mylayer, i, true);
+            }
+        }
     }
 
     private void activatePlayerCollisions()

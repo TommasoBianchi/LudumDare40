@@ -2217,6 +2217,7 @@ MonoBehaviour:
   - {fileID: 102274959946098366}
   - {fileID: 102914746515625848}
   gameOverOverlay: {fileID: 0}
+  gameOverOverlayDuration: 5
 --- !u!124 &124930613524394308
 Behaviour:
   m_ObjectHideFlags: 1
