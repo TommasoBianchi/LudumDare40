@@ -9,15 +9,7 @@ public class Beer : MonoBehaviour {
 
     public float beerLevel;
 
-    private void Update()
-    {
-        if (Input.GetMouseButton(0))
-        {
-            drinkBeer(0.001f);
-        }
-    }
-
-    void drinkBeer(float amount)
+    public void DrinkBeer(float amount)
     {
         beerLevel -= amount;
 
