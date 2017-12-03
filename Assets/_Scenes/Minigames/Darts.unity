@@ -6150,6 +6150,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1853128887}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1865299381 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1878849808952774, guid: 78758add14a0afb4aac1812a9d1ace83,
+    type: 2}
+  m_PrefabInternal: {fileID: 1911476011}
 --- !u!1 &1883757124
 GameObject:
   m_ObjectHideFlags: 0
@@ -6415,6 +6420,63 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114556418255403468, guid: 78758add14a0afb4aac1812a9d1ace83,
+        type: 2}
+      propertyPath: m_Text
+      value: Darts
+      objectReference: {fileID: 0}
+    - target: {fileID: 114869174293427664, guid: 78758add14a0afb4aac1812a9d1ace83,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Space to shoot
+
+        Try to center the target'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114465617503523302, guid: 78758add14a0afb4aac1812a9d1ace83,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.22794116
+      objectReference: {fileID: 0}
+    - target: {fileID: 114465617503523302, guid: 78758add14a0afb4aac1812a9d1ace83,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.23129323
+      objectReference: {fileID: 0}
+    - target: {fileID: 114465617503523302, guid: 78758add14a0afb4aac1812a9d1ace83,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.23129323
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076971419271608, guid: 78758add14a0afb4aac1812a9d1ace83,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.22794116
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076971419271608, guid: 78758add14a0afb4aac1812a9d1ace83,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.23129323
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076971419271608, guid: 78758add14a0afb4aac1812a9d1ace83,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.23129323
+      objectReference: {fileID: 0}
+    - target: {fileID: 114051897632849026, guid: 78758add14a0afb4aac1812a9d1ace83,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.22794116
+      objectReference: {fileID: 0}
+    - target: {fileID: 114051897632849026, guid: 78758add14a0afb4aac1812a9d1ace83,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.23129323
+      objectReference: {fileID: 0}
+    - target: {fileID: 114051897632849026, guid: 78758add14a0afb4aac1812a9d1ace83,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.23129323
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 78758add14a0afb4aac1812a9d1ace83, type: 2}
   m_IsPrefabParent: 0
@@ -6521,6 +6583,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114700177815540430, guid: 793ad08a626878c4aaf9ae0bc4cef07e,
+        type: 2}
+      propertyPath: scriptsToDisableAtStart.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4216426402060534, guid: 793ad08a626878c4aaf9ae0bc4cef07e, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6568,6 +6635,31 @@ Prefab:
       propertyPath: freezeTime
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114700177815540430, guid: 793ad08a626878c4aaf9ae0bc4cef07e,
+        type: 2}
+      propertyPath: startPanel
+      value: 
+      objectReference: {fileID: 1911476012}
+    - target: {fileID: 114700177815540430, guid: 793ad08a626878c4aaf9ae0bc4cef07e,
+        type: 2}
+      propertyPath: countdown
+      value: 
+      objectReference: {fileID: 1865299381}
+    - target: {fileID: 114700177815540430, guid: 793ad08a626878c4aaf9ae0bc4cef07e,
+        type: 2}
+      propertyPath: scriptsToDisableAtStart.Array.data[0]
+      value: 
+      objectReference: {fileID: 1655944903}
+    - target: {fileID: 114700177815540430, guid: 793ad08a626878c4aaf9ae0bc4cef07e,
+        type: 2}
+      propertyPath: scriptsToDisableAtStart.Array.data[1]
+      value: 
+      objectReference: {fileID: 1725593957}
+    - target: {fileID: 114700177815540430, guid: 793ad08a626878c4aaf9ae0bc4cef07e,
+        type: 2}
+      propertyPath: scriptsToDisableAtStart.Array.data[2]
+      value: 
+      objectReference: {fileID: 947851788}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 793ad08a626878c4aaf9ae0bc4cef07e, type: 2}
   m_IsPrefabParent: 0
