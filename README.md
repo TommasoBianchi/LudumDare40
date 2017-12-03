@@ -1,4 +1,4 @@
-# Game_title
+# Drunk Avenue
 
 ## How to play
 
