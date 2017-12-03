@@ -25,14 +25,8 @@ public class Player : MonoBehaviour {
     
 	void Start ()
     {
-        drunkMaluses = new Dictionary<GameManager.Drunkness, DrunkMalus>();
-        drunkMaluses.Add(GameManager.Drunkness.None, new DrunkMalus(10, 0, float.MaxValue, 0));
-        drunkMaluses.Add(GameManager.Drunkness.Low, new DrunkMalus(9, 1, 12, 4));
-        drunkMaluses.Add(GameManager.Drunkness.Medium, new DrunkMalus(8, 2, 9, 3));
-        drunkMaluses.Add(GameManager.Drunkness.High, new DrunkMalus(7, 3, 6, 2));
-        drunkMaluses.Add(GameManager.Drunkness.Dead, new DrunkMalus(6, 8, 3, 1));
+        transform.position = GameManager.PlayerSpawnPosition;
 
-        JSONManager.Save("DrunkMaluses", drunkMaluses);
         drunkMaluses = JSONManager.Load<Dictionary<GameManager.Drunkness, DrunkMalus>>("DrunkMaluses");
 
         DrunkMalus currentDrunkMalus = drunkMaluses[GameManager.DrunkLevel];

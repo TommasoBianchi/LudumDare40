@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MinigameManager : MonoBehaviour {
@@ -24,11 +25,11 @@ public class MinigameManager : MonoBehaviour {
 
     IEnumerator returnToMainScene()
     {
-        for (int i = 0; i < 1000; i++)
+        for (int i = 0; i < 400; i++)
         {
             yield return null;
         }
-
-        Debug.Log("Return to main scene");
+        
+        SceneManager.LoadScene("MainScene");
     }
 }

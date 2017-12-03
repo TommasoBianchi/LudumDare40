@@ -410,7 +410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bounds:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 40, y: 10, z: 45}
+    m_Extent: {x: 38, y: 10, z: 45}
 --- !u!135 &135012582026170742
 SphereCollider:
   m_ObjectHideFlags: 1
