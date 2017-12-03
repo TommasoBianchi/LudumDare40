@@ -8,9 +8,33 @@ public class MinigameManager : MonoBehaviour {
 
     public Image winPanel;
     public Image losePanel;
+    public Image startPanel;
+    public GameObject countdown;
     public bool freezeTime = true;
 
     private float drunkAmountIfWin = 0.1f;
+    private bool hasStarted = false;
+
+    void Start()
+    {
+        Time.timeScale = 0;
+    }
+
+    void Update()
+    {
+        if (!hasStarted && Input.GetKeyDown(KeyCode.Space))
+        {
+            hasStarted = true;
+            startPanel.gameObject.SetActive(false);
+            countdown.SetActive(true);
+        }
+    }
+
+    public void StartMinigame()
+    {
+        countdown.SetActive(false);
+        Time.timeScale = 1;
+    }
 
     public void Win()
     {
