@@ -10,6 +10,7 @@ public static class GameManager
         PlayerSpawnPosition = Vector3.zero;
         minigameSettings = JSONManager.LoadDirectory<Dictionary<string, float[]>>("Minigames");
         barMinigames = JSONManager.Load<Dictionary<string, string>>("BarMinigames");
+        SelectNewBar();
     }
 
     #region Player
@@ -67,6 +68,7 @@ public static class GameManager
     #region Bars
 
     private static Dictionary<string, string> barMinigames;
+    public static string SelectedBarName { get; private set; }
 
     public static string GetMinigame(string barName)
     {
@@ -77,6 +79,21 @@ public static class GameManager
     {
         PlayerSpawnPosition = player.position;
         SceneManager.LoadScene(barMinigames[bar.name]);
+    }
+
+    public static void SelectNewBar()
+    {
+        List<string> names = new List<string>();
+
+        foreach (string name in barMinigames.Keys)
+        {
+            if(name != SelectedBarName)
+            {
+                names.Add(name);
+            }
+        }
+
+        SelectedBarName = names[Random.Range(0, names.Count)];
     }
 
     #endregion
