@@ -4,4 +4,25 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Scenes/MainMenu.unity
+    guid: 30ae40f37598bfd4d8c952d22b32a643
+  - enabled: 1
+    path: Assets/_Scenes/MainScene.unity
+    guid: 3be6c8b07f154394fb26a9ef8f2be1ee
+  - enabled: 1
+    path: Assets/_Scenes/Minigames/Darts.unity
+    guid: 02649d2e487a2a641825190ce2689c51
+  - enabled: 1
+    path: Assets/_Scenes/Minigames/DontFallDown.unity
+    guid: 18ed740e5baa0764aaed3b00f6e352d3
+  - enabled: 1
+    path: Assets/_Scenes/Minigames/DrinkItAll.unity
+    guid: 6a333737f9befda4c95e1cf660a7f8b8
+  - enabled: 1
+    path: Assets/_Scenes/Minigames/GrabTheBeer.unity
+    guid: 5b9bcfbcb807fbe498320fb80f19658c
+  - enabled: 1
+    path: Assets/_Scenes/Minigames/Karaoke.unity
+    guid: 712f6a394a45fd742b6b1bdb6e069392
