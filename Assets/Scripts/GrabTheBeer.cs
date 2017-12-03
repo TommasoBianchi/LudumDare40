@@ -17,22 +17,23 @@ public class GrabTheBeer : MonoBehaviour {
     private bool beerLaunched;
     
 
-    void Start () {
-
+    void Start ()
+    {
         spawnBeerTimer = Time.time + 3;
-        beerLaunched = false;
-		
+        beerLaunched = false;		
 	}
 	
-	
-	void Update () {
-
+	void Update ()
+    {
         if (Time.time > spawnBeerTimer)
         {
             SpawnBeer();
-
         }
 
+        if (Input.GetKeyDown("space"))
+        {
+            grabNearestBeer();
+        }
     }
 
     private void SpawnBeer ()
@@ -57,5 +58,30 @@ public class GrabTheBeer : MonoBehaviour {
         {
             spawnBeerTimer = float.MaxValue;
         }
+    }
+
+    private void grabNearestBeer()
+    {
+        Arm.GetComponent<Animator>().SetTrigger("Grab");
+
+        LaunchedBeer[] allBeers = FindObjectsOfType<LaunchedBeer>();
+
+        if(allBeers.Length == 0)
+        {
+            return;
+        }
+
+        LaunchedBeer nearestBeer = allBeers[0];
+        float nearestDistance = (transform.position - nearestBeer.transform.position).sqrMagnitude;
+        foreach (LaunchedBeer beer in allBeers)
+        {
+            float distance = (transform.position - beer.transform.position).sqrMagnitude;
+            if(distance < nearestDistance)
+            {
+                nearestDistance = distance;
+                nearestBeer = beer;
+            }
+        }
+        nearestBeer.Grab();
     }
 }
