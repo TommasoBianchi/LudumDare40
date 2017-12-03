@@ -283,6 +283,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114700177815540430, guid: 793ad08a626878c4aaf9ae0bc4cef07e,
+        type: 2}
+      propertyPath: scriptsToDisableAtStart.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4216426402060534, guid: 793ad08a626878c4aaf9ae0bc4cef07e, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -330,6 +335,21 @@ Prefab:
       propertyPath: freezeTime
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114700177815540430, guid: 793ad08a626878c4aaf9ae0bc4cef07e,
+        type: 2}
+      propertyPath: startPanel
+      value: 
+      objectReference: {fileID: 1019389629}
+    - target: {fileID: 114700177815540430, guid: 793ad08a626878c4aaf9ae0bc4cef07e,
+        type: 2}
+      propertyPath: countdown
+      value: 
+      objectReference: {fileID: 1019389631}
+    - target: {fileID: 114700177815540430, guid: 793ad08a626878c4aaf9ae0bc4cef07e,
+        type: 2}
+      propertyPath: scriptsToDisableAtStart.Array.data[0]
+      value: 
+      objectReference: {fileID: 113498793}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 793ad08a626878c4aaf9ae0bc4cef07e, type: 2}
   m_IsPrefabParent: 0
@@ -1686,6 +1706,18 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114556418255403468, guid: 78758add14a0afb4aac1812a9d1ace83,
+        type: 2}
+      propertyPath: m_Text
+      value: Dont fall down
+      objectReference: {fileID: 0}
+    - target: {fileID: 114869174293427664, guid: 78758add14a0afb4aac1812a9d1ace83,
+        type: 2}
+      propertyPath: m_Text
+      value: 'A-D to balance left and right
+
+        Try not to fall'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 78758add14a0afb4aac1812a9d1ace83, type: 2}
   m_IsPrefabParent: 0
@@ -1701,6 +1733,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1019389628}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1 &1019389631 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1878849808952774, guid: 78758add14a0afb4aac1812a9d1ace83,
+    type: 2}
+  m_PrefabInternal: {fileID: 1019389628}
 --- !u!1 &1090827783
 GameObject:
   m_ObjectHideFlags: 0
