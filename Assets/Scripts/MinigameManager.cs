@@ -11,13 +11,17 @@ public class MinigameManager : MonoBehaviour {
     public Image startPanel;
     public GameObject countdown;
     public bool freezeTime = true;
+    public MonoBehaviour[] scriptsToDisableAtStart;
 
     private float drunkAmountIfWin = 0.1f;
     private bool hasStarted = false;
 
     void Start()
     {
-        Time.timeScale = 0;
+        foreach (MonoBehaviour script in scriptsToDisableAtStart)
+        {
+            script.enabled = false;
+        }
     }
 
     void Update()
@@ -27,13 +31,29 @@ public class MinigameManager : MonoBehaviour {
             hasStarted = true;
             startPanel.gameObject.SetActive(false);
             countdown.SetActive(true);
+            StartCoroutine(doCountdown());
         }
     }
 
-    public void StartMinigame()
+    private IEnumerator doCountdown()
+    {
+        float endTime = Time.time + 3;
+
+        while(Time.time < endTime)
+        {
+            yield return null;
+        }
+
+        startMinigame();
+    }
+
+    private void startMinigame()
     {
         countdown.SetActive(false);
-        Time.timeScale = 1;
+        foreach (MonoBehaviour script in scriptsToDisableAtStart)
+        {
+            script.enabled = true;
+        }
     }
 
     public void Win()

@@ -1093,6 +1093,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114700177815540430, guid: 793ad08a626878c4aaf9ae0bc4cef07e,
+        type: 2}
+      propertyPath: scriptsToDisableAtStart.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4216426402060534, guid: 793ad08a626878c4aaf9ae0bc4cef07e, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1145,6 +1150,15 @@ Prefab:
       propertyPath: countdown
       value: 
       objectReference: {fileID: 1365768738}
+    - target: {fileID: 1767114294935980, guid: 793ad08a626878c4aaf9ae0bc4cef07e, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114700177815540430, guid: 793ad08a626878c4aaf9ae0bc4cef07e,
+        type: 2}
+      propertyPath: scriptsToDisableAtStart.Array.data[0]
+      value: 
+      objectReference: {fileID: 528928453}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 793ad08a626878c4aaf9ae0bc4cef07e, type: 2}
   m_IsPrefabParent: 0
@@ -1245,23 +1259,15 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 224074522024162582, guid: 78758add14a0afb4aac1812a9d1ace83,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -284
-      objectReference: {fileID: 0}
     - target: {fileID: 224581609047675566, guid: 78758add14a0afb4aac1812a9d1ace83,
         type: 2}
       propertyPath: m_LocalPosition.y
       value: 284
       objectReference: {fileID: 0}
-    - target: {fileID: 1878849808952774, guid: 78758add14a0afb4aac1812a9d1ace83, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1525540455293096, guid: 78758add14a0afb4aac1812a9d1ace83, type: 2}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 224074522024162582, guid: 78758add14a0afb4aac1812a9d1ace83,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -284
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 78758add14a0afb4aac1812a9d1ace83, type: 2}
