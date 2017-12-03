@@ -77,4 +77,10 @@ public static class GameManager
     }
 
     #endregion
+
+    #region Bars
+
+
+
+    #endregion
 }
