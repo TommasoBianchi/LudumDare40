@@ -1,5 +1,3 @@
-# The more you drink, the ~~worse~~ best it is
-
 ## Authors
 
 * [Tommaso Bianchi](https://github.com/tommasobianchi) - Programming
