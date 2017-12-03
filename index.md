@@ -1,3 +1,7 @@
+## Theme 
+
+The more you have, the worse it is
+
 ## How to play
 
 * [WebGL Player](WebGL/index.html)
