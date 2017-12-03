@@ -15,8 +15,9 @@ public class Player : MonoBehaviour {
 
     private KeyCode upKey = KeyCode.W;
     private KeyCode downKey = KeyCode.S;
-    private KeyCode rightKey = KeyCode.A;
-    private KeyCode leftKey = KeyCode.D;
+    private KeyCode rightKey = KeyCode.D;
+    private KeyCode leftKey = KeyCode.A;
+    private UIManager uiManager;
 
     private float nextMaxSpeedRandomizationTime = 0;
     private float nextKeyRandomizationTime;
@@ -25,6 +26,8 @@ public class Player : MonoBehaviour {
     
 	void Start ()
     {
+        uiManager = FindObjectOfType<UIManager>();
+
         transform.position = GameManager.PlayerSpawnPosition;
 
         drunkMaluses = JSONManager.Load<Dictionary<GameManager.Drunkness, DrunkMalus>>("DrunkMaluses");
@@ -55,8 +58,8 @@ public class Player : MonoBehaviour {
         Vector3 direction = Vector3.zero;
         if (Input.GetKey(upKey)) direction.z++;
         if (Input.GetKey(downKey)) direction.z--;
-        if (Input.GetKey(leftKey)) direction.x++;
-        if (Input.GetKey(rightKey)) direction.x--;
+        if (Input.GetKey(leftKey)) direction.x--;
+        if (Input.GetKey(rightKey)) direction.x++;
 
         if (Time.time > nextMaxSpeedRandomizationTime)
         {
@@ -135,6 +138,8 @@ public class Player : MonoBehaviour {
         downKey = keyCodes[1];
         rightKey = keyCodes[2];
         leftKey = keyCodes[3];
+
+        uiManager.UpdateKeyBindings(keyCodes);
     }
 
     private struct DrunkMalus
