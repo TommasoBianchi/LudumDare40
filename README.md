@@ -4,7 +4,7 @@
 
 ### Windows/macOSX/Linux
 
-* Go to [builds](https://github.com/TommasoBianchi/LudumDare40/tree/builds/v0.1/Linux) branch
+* Go to [builds](https://github.com/TommasoBianchi/LudumDare40/tree/builds/v0.1) branch
 * Download the latest build for your OS
 * Unzip it
 * Launch the executable file
