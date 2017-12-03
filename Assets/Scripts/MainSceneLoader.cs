@@ -5,21 +5,29 @@ using UnityEngine.UI;
 
 public class MainSceneLoader : MonoBehaviour {
 
-    public float delayInSeconds = 1;
     public Image loadingOverlay;
 
     private Player player;
     private float targetTimeToStart;
-    
-	void Start ()
+    private float delayInSeconds;
+
+    void Start ()
     {
         player = FindObjectOfType<Player>();
         player.gameObject.SetActive(false);
-        targetTimeToStart = Time.realtimeSinceStartup + delayInSeconds;
+
+        #if UNITY_WEBGL
+        Time.timeScale = 8;
+        delayInSeconds = 4;
+        #else
         Time.timeScale = 50;
-	}
-	
-	void Update ()
+        delayInSeconds = 1;
+        #endif
+
+        targetTimeToStart = Time.realtimeSinceStartup + delayInSeconds;
+    }
+
+    void Update ()
     {
 		if(Time.realtimeSinceStartup > targetTimeToStart)
         {
