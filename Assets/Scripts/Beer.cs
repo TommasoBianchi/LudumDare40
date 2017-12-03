@@ -19,4 +19,11 @@ public class Beer : MonoBehaviour {
 
         beer.localScale = new Vector3(1, beerLevel, 1);
     }
+
+    public void SetBeerLevel(float level)
+    {
+        beerLevel = level;
+
+        beer.localScale = new Vector3(1, beerLevel, 1);
+    }
 }

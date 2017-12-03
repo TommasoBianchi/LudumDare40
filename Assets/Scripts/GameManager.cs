@@ -35,7 +35,6 @@ public static class GameManager
     public static void Drink(float amount)
     {
         playerStats.drunkLevel += amount;
-        Debug.Log(DrunkLevel);
     }
 
     private struct PlayerStats
