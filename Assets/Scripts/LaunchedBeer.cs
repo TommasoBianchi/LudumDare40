@@ -11,11 +11,12 @@ public class LaunchedBeer: MonoBehaviour {
     private float myBeerChance;
     private float vanishDistance;
     private bool vanished;
-
-    // Use this for initialization
-    void Start () {
-
+    
+    void Start ()
+    {
         myBeerChance = GameManager.GetMinigameSetting("GrabTheBeer", "MyBeer");
+
+        vanished = false;
 
         if (status > myBeerChance)
         {
@@ -24,17 +25,10 @@ public class LaunchedBeer: MonoBehaviour {
         }
 
         vanishDistance = GameManager.GetMinigameSetting("GrabTheBeer", "Vanish");
-
 	}
 	
-	// Update is called once per frame
-	void Update () {
-
-        if (Input.GetKey("space"))
-        {
-            Grab();
-        }
-
+	void Update ()
+    {
         if (gameObject.transform.position.x < -18)
         {
             if (status <= myBeerChance)
@@ -49,21 +43,34 @@ public class LaunchedBeer: MonoBehaviour {
         {
             Vanish();
         }
-
     }
 
-    private void Grab()
+    public void Grab()
     {
-        Arm.GetComponent<Animator>().SetTrigger("Grab");
-
-        if ((gameObject.transform.position.x < -8 && gameObject.transform.position.x > -11) && status <= myBeerChance)
+        if ((gameObject.transform.position.x <= -6.5 && gameObject.transform.position.x >= -10.5) && status <= myBeerChance)
         {
+            if (vanished)
+            {
+                Renderer[] rs = GetComponentsInChildren<Renderer>();
+                foreach (Renderer r in rs)
+                {
+                    r.enabled = true;
+                }
+            }
             FindObjectOfType<MinigameManager>().Win();
-            
+            gameObject.GetComponent<Mover>().enabled = false;
         }
 
-        else if ((gameObject.transform.position.x < -8 && gameObject.transform.position.x > -11) && status > myBeerChance)
+        else if ((gameObject.transform.position.x <= -6.5 && gameObject.transform.position.x >= -10.5) && status > myBeerChance)
         {
+            if (vanished)
+            {
+                Renderer[] rs = GetComponentsInChildren<Renderer>();
+                foreach (Renderer r in rs)
+                {
+                    r.enabled = true;
+                }
+            }
             FindObjectOfType<MinigameManager>().Lose();
         }
     }

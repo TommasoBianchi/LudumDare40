@@ -112,6 +112,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &71453795 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114501649510093626, guid: 78758add14a0afb4aac1812a9d1ace83,
+    type: 2}
+  m_PrefabInternal: {fileID: 1014696641}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &118885668
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,6 +173,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114700177815540430, guid: 793ad08a626878c4aaf9ae0bc4cef07e,
+        type: 2}
+      propertyPath: scriptsToDisableAtStart.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4216426402060534, guid: 793ad08a626878c4aaf9ae0bc4cef07e, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -208,7 +219,27 @@ Prefab:
         type: 2}
       propertyPath: losePanel
       value: 
+      objectReference: {fileID: 71453795}
+    - target: {fileID: 114700177815540430, guid: 793ad08a626878c4aaf9ae0bc4cef07e,
+        type: 2}
+      propertyPath: startPanel
+      value: 
       objectReference: {fileID: 2144970074}
+    - target: {fileID: 114700177815540430, guid: 793ad08a626878c4aaf9ae0bc4cef07e,
+        type: 2}
+      propertyPath: countdown
+      value: 
+      objectReference: {fileID: 1014696642}
+    - target: {fileID: 114700177815540430, guid: 793ad08a626878c4aaf9ae0bc4cef07e,
+        type: 2}
+      propertyPath: scriptsToDisableAtStart.Array.data[0]
+      value: 
+      objectReference: {fileID: 876254180}
+    - target: {fileID: 114700177815540430, guid: 793ad08a626878c4aaf9ae0bc4cef07e,
+        type: 2}
+      propertyPath: freezeTime
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 793ad08a626878c4aaf9ae0bc4cef07e, type: 2}
   m_IsPrefabParent: 0
@@ -762,8 +793,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnpoint: {fileID: 553035961}
   beerPrefab: {fileID: 1902092858013228, guid: f215c88dfda69774ea1ccef2e412b3de, type: 2}
-  beerStatusMean: 0
-  beerStatusVariance: 0
+  beerStatusMean: -1
+  beerStatusVariance: 2
   Arm: {fileID: 118885668}
 --- !u!1 &934580855
 GameObject:
@@ -951,9 +982,45 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 224581609047675566, guid: 78758add14a0afb4aac1812a9d1ace83,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 189
+      objectReference: {fileID: 0}
+    - target: {fileID: 224074522024162582, guid: 78758add14a0afb4aac1812a9d1ace83,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -189
+      objectReference: {fileID: 0}
+    - target: {fileID: 114556418255403468, guid: 78758add14a0afb4aac1812a9d1ace83,
+        type: 2}
+      propertyPath: m_Text
+      value: Grab the beer
+      objectReference: {fileID: 0}
+    - target: {fileID: 114869174293427664, guid: 78758add14a0afb4aac1812a9d1ace83,
+        type: 2}
+      propertyPath: m_Text
+      value: 'press space to grab the beer in front of you
+
+        Don''t steal other people milk'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114869174293427664, guid: 78758add14a0afb4aac1812a9d1ace83,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725985440769266, guid: 78758add14a0afb4aac1812a9d1ace83, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 78758add14a0afb4aac1812a9d1ace83, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1014696642 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1878849808952774, guid: 78758add14a0afb4aac1812a9d1ace83,
+    type: 2}
+  m_PrefabInternal: {fileID: 1014696641}
 --- !u!1 &1044386880
 GameObject:
   m_ObjectHideFlags: 0
