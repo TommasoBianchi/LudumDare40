@@ -32,9 +32,12 @@ public class UIManager : MonoBehaviour {
 
     public void PlayGameOverAnimation()
     {
-        gameOverOverlay.SetActive(true);
-        gameOverFinishTime = Time.time + gameOverOverlayDuration;
-        StartCoroutine(gameOver());
+        if (gameOverOverlay.activeSelf == false)
+        {
+            gameOverOverlay.SetActive(true);
+            gameOverFinishTime = Time.time + gameOverOverlayDuration;
+            StartCoroutine(gameOver());
+        }
     }
 
     private IEnumerator gameOver()
