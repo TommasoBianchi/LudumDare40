@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bar : MonoBehaviour {
-
+    
     public Transform entrancePosition;
     public GameObject pressToEnterTip;
+    public GameObject selectedBarLight;
     
     public Transform player;
 
@@ -13,11 +14,19 @@ public class Bar : MonoBehaviour {
     
 	void Start ()
     {
+        if(name == GameManager.SelectedBarName)
+        {
+            selectedBarLight.SetActive(true);
+        }
+        else
+        {
+            selectedBarLight.SetActive(false);
+        }
 	}
 	
 	void Update ()
     {
-		if((entrancePosition.position - player.position).sqrMagnitude < 30)
+		if((entrancePosition.position - player.position).sqrMagnitude < 30 && name == GameManager.SelectedBarName)
         {
             barThatEnabledTip = this;
             pressToEnterTip.SetActive(true);

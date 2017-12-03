@@ -16,6 +16,7 @@ public class MinigameManager : MonoBehaviour {
         Time.timeScale = 0;
         winPanel.gameObject.SetActive(true);
         GameManager.Drink(drunkAmountIfWin);
+        GameManager.SelectNewBar();
         StartCoroutine(returnToMainScene());
     }
 
