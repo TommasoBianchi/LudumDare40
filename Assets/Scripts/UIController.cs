@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
     
 public class UIController : MonoBehaviour {
 
@@ -62,8 +63,14 @@ public class UIController : MonoBehaviour {
         PauseMenuLocation = 0;
     }
 
-    /*public void BackMainMenu ()
+    public void BackMainMenu ()
     {
-        Application.LoadLevel(0);
-    }*/
+        SceneManager.LoadScene(0);
+    }
+
+    public void Quitgame()
+    {
+            Application.Quit();
+
+    }
 }
