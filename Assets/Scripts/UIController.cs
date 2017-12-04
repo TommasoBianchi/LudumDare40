@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
     
 public class UIController : MonoBehaviour {
 
     public GameObject pausePanel;
     public GameObject settingsPanel;
+    public Slider musicSlider;
     public int PauseMenuLocation;
     private bool IsPaused;
     
@@ -13,6 +15,7 @@ public class UIController : MonoBehaviour {
 	void Start () {
         IsPaused = false;
         PauseMenuLocation = 0;
+        musicSlider.value = GameManager.musicVolume;
 	}
 	
 	// Update is called once per frame

@@ -25,6 +25,8 @@ public static class GameManager
         minigamesToAssign = minigamesToAssignArray.ToList();
 
         SelectNewBar();
+
+        musicVolume = 1;
     }
 
     #region Player
@@ -176,4 +178,13 @@ private static Dictionary<string, Dictionary<string, float[]>> minigameSettings;
     }
 
     #endregion
+
+    public static float musicVolume { get; private set; }
+    public static event System.Action<float> onMusicVolumeChange;
+
+    public static void SetMusicVolume(float amount)
+    {
+        musicVolume = amount;
+        onMusicVolumeChange.Invoke(musicVolume);
+    }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -611,6 +611,7 @@ GameObject:
   - component: {fileID: 764688813}
   - component: {fileID: 764688812}
   - component: {fileID: 764688816}
+  - component: {fileID: 764688817}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -747,7 +748,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -760,6 +761,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &764688817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 764688811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e5cd3d397aded4fb174d556c159ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &771144490
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,12 +988,12 @@ Prefab:
     - target: {fileID: 224813681545956490, guid: 78758add14a0afb4aac1812a9d1ace83,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 336
+      value: 505
       objectReference: {fileID: 0}
     - target: {fileID: 224813681545956490, guid: 78758add14a0afb4aac1812a9d1ace83,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 189
+      value: 337.5
       objectReference: {fileID: 0}
     - target: {fileID: 224813681545956490, guid: 78758add14a0afb4aac1812a9d1ace83,
         type: 2}
@@ -1322,12 +1334,12 @@ Prefab:
     - target: {fileID: 224545851138662154, guid: 0f187e69c21cdc040b3a9c214fa0adae,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 336
+      value: 505
       objectReference: {fileID: 0}
     - target: {fileID: 224545851138662154, guid: 0f187e69c21cdc040b3a9c214fa0adae,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 189
+      value: 337.5
       objectReference: {fileID: 0}
     - target: {fileID: 224545851138662154, guid: 0f187e69c21cdc040b3a9c214fa0adae,
         type: 2}
@@ -1408,6 +1420,16 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114260932904773016, guid: 0f187e69c21cdc040b3a9c214fa0adae,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 764688817}
+    - target: {fileID: 114260932904773016, guid: 0f187e69c21cdc040b3a9c214fa0adae,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetVolume
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f187e69c21cdc040b3a9c214fa0adae, type: 2}
