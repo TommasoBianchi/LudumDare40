@@ -28,7 +28,7 @@ public class Bar : MonoBehaviour {
 	
 	void Update ()
     {
-		if((entrancePosition.position - player.position).sqrMagnitude < 30 && name == GameManager.SelectedBarName)
+		if((entrancePosition.position - player.position).sqrMagnitude < 50 && name == GameManager.SelectedBarName)
         {
             barThatEnabledTip = this;
             pressToEnterTip.SetActive(true);

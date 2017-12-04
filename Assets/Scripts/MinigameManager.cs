@@ -70,9 +70,9 @@ public class MinigameManager : MonoBehaviour {
 
     private IEnumerator doAfterTime(float time, System.Action callback)
     {
-        float endTime = Time.time + time;
+        float endTime = Time.realtimeSinceStartup + time;
 
-        while (Time.time < endTime)
+        while (Time.realtimeSinceStartup < endTime)
         {
             yield return null;
         }
