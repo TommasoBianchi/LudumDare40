@@ -3402,6 +3402,26 @@ Prefab:
       propertyPath: onScreenPosition.x
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 23373576601519810, guid: fd1e37e653c150a41adeb567ff2b827d,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 05b096c93236aa44eacabfc9ef140366, type: 2}
+    - target: {fileID: 23514928695167672, guid: fd1e37e653c150a41adeb567ff2b827d,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 05b096c93236aa44eacabfc9ef140366, type: 2}
+    - target: {fileID: 23839574781035590, guid: fd1e37e653c150a41adeb567ff2b827d,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 05b096c93236aa44eacabfc9ef140366, type: 2}
+    - target: {fileID: 23300909778272020, guid: fd1e37e653c150a41adeb567ff2b827d,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 05b096c93236aa44eacabfc9ef140366, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fd1e37e653c150a41adeb567ff2b827d, type: 2}
   m_IsPrefabParent: 0
