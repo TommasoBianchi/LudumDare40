@@ -8,9 +8,12 @@ public class Darts : MonoBehaviour {
     public WaypointWanderer aim;
     public Animator handAnimator;
     public LayerMask targetLayerMask;
+    public GameObject Target;
     
     void Start ()
     {
+        Target.transform.localScale -= new Vector3(GameManager.GetMinigameSetting("Darts", "TargetScale"), GameManager.GetMinigameSetting("Darts", "TargetScale"), 0);
+
         float targetSpeed = GaussianDistribution.Generate(
             GameManager.GetMinigameSetting("Darts", "TargetSpeedMean"),
             GameManager.GetMinigameSetting("Darts", "TargetSpeedVariance"));

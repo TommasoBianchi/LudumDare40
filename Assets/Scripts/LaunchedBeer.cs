@@ -43,34 +43,23 @@ public class LaunchedBeer: MonoBehaviour {
         {
             Vanish();
         }
+
+        if (gameObject.transform.position.x < GameManager.GetMinigameSetting("GrabTheBeer", "Reappear") && vanished)
+        {
+            Reappear();
+        }
     }
 
     public void Grab()
     {
         if ((gameObject.transform.position.x <= -6.5 && gameObject.transform.position.x >= -10.5) && status <= myBeerChance)
         {
-            if (vanished)
-            {
-                Renderer[] rs = GetComponentsInChildren<Renderer>();
-                foreach (Renderer r in rs)
-                {
-                    r.enabled = true;
-                }
-            }
             FindObjectOfType<MinigameManager>().Win();
             gameObject.GetComponent<Mover>().enabled = false;
         }
 
         else if ((gameObject.transform.position.x <= -6.5 && gameObject.transform.position.x >= -10.5) && status > myBeerChance)
         {
-            if (vanished)
-            {
-                Renderer[] rs = GetComponentsInChildren<Renderer>();
-                foreach (Renderer r in rs)
-                {
-                    r.enabled = true;
-                }
-            }
             FindObjectOfType<MinigameManager>().Lose();
         }
     }
@@ -84,5 +73,16 @@ public class LaunchedBeer: MonoBehaviour {
         }
           
         vanished = true;
+    }
+
+    private void Reappear ()
+    {
+        Renderer[] rs = GetComponentsInChildren<Renderer>();
+        foreach (Renderer r in rs)
+        {
+            r.enabled = true;
+        }
+
+        vanished = false;
     }
 }
