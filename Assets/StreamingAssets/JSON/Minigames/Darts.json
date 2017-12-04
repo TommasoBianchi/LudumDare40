@@ -1,0 +1,37 @@
+{
+	"TargetSpeedMean": [
+		5,
+		6,
+		7,
+		8,
+		9
+	],
+	"TargetSpeedVariance": [
+		1,
+		1,
+		1,
+		1,
+		2
+	],
+	"AimSpeedMean": [
+		5,
+		6,
+		7,
+		8,
+		9
+	],
+	"AimSpeedVaiance": [
+		1,
+		1,
+		1,
+		1,
+		2
+	],
+	"TargetScale": [
+		0,
+		0.1,
+		0.2,
+		0.3,
+		0.4
+	]
+}
