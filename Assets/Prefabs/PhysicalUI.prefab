@@ -223,6 +223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4325248469862676}
   - component: {fileID: 114390024236633152}
+  - component: {fileID: 114121149868214228}
   m_Layer: 9
   m_Name: BeerSlider
   m_TagString: Untagged
@@ -729,7 +730,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1367827047288416}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.8610363, y: 5.686098, z: 0.39561796}
+  m_LocalPosition: {x: -5.985185, y: 3.1314816, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4855220654066266}
@@ -2185,6 +2186,19 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
+--- !u!114 &114121149868214228
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1367827047288416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f44b7cce79686444949c18debe10d0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onScreenPosition: {x: 0.1, y: 0.7}
+  uiCamera: {fileID: 20817072004101634}
 --- !u!114 &114390024236633152
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -689,7 +689,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &213812245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -754,7 +754,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 213812244}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 505, y: 284, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 301086215}
@@ -984,7 +984,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 301086214}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 274, z: 0}
+  m_LocalPosition: {x: 0, y: 40, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 213812248}
@@ -1709,7 +1709,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b183034671ca6914f8fc07680d57c351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayInSeconds: 1
   loadingOverlay: {fileID: 1688756846}
 --- !u!4 &536413222
 Transform:
@@ -2683,7 +2682,7 @@ Prefab:
     - target: {fileID: 224545851138662154, guid: 0f187e69c21cdc040b3a9c214fa0adae,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 284
+      value: 337.5
       objectReference: {fileID: 0}
     - target: {fileID: 224545851138662154, guid: 0f187e69c21cdc040b3a9c214fa0adae,
         type: 2}
