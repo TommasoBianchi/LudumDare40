@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour {
     public TextMesh[] keyBindings;
     public GameObject gameOverOverlay;
     public float gameOverOverlayDuration;
+    public Player player;
 
     private float gameOverFinishTime;
 
@@ -73,5 +74,10 @@ public class UIManager : MonoBehaviour {
         Vector3 scale = healthBar.localScale;
         scale.y = health;
         healthBar.localScale = scale;
+
+        if(health <= 0)
+        {
+            player.Die();
+        }
     }
 }

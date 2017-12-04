@@ -30,7 +30,7 @@ public static class GameManager
 
     public static float RawDrunkLevel { get { return playerStats.drunkLevel; } }
     public static Drunkness DrunkLevel { get { return (Drunkness)Mathf.Clamp(Mathf.FloorToInt(playerStats.drunkLevel / 0.25f), 0, 4); } }
-    public static float Health { get { return playerStats.health; } }
+    public static float Health { get { return Mathf.Clamp(playerStats.health, 0, 1); } }
     public static float PoliceLevel { get { return playerStats.policeLevel; } }
 
     public static Vector3 PlayerSpawnPosition { get; private set; }
@@ -40,6 +40,11 @@ public static class GameManager
     public static void Drink(float amount)
     {
         playerStats.drunkLevel += amount;
+    }
+
+    public static void TakeDamage(float amount)
+    {
+        playerStats.health -= amount;
     }
 
     public static void GameOver()

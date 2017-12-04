@@ -57,14 +57,19 @@ public class Player : MonoBehaviour {
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Car"))
         {
-            activatePlayerCollisions();
-            GetComponent<Rigidbody>().useGravity = true;
             Vector3 forceDirection = transform.position - collision.contacts[0].point;
             GetComponent<Rigidbody>().AddForce(forceDirection.normalized * 1000, ForceMode.Impulse);
             GetComponent<Rigidbody>().AddForce(Vector3.up * 1000, ForceMode.Impulse);
-            this.enabled = false;
-            uiManager.PlayGameOverAnimation();
+            Die();
         }
+    }
+
+    public void Die()
+    {
+        activatePlayerCollisions();
+        GetComponent<Rigidbody>().useGravity = true;
+        this.enabled = false;
+        uiManager.PlayGameOverAnimation();
     }
 
     private void move()
