@@ -1,32 +1,10 @@
 [
   {
     "points": 100,
-    "name": "name",
-    "tag": "tag"
+    "name": "Pallo"
   },
   {
     "points": 0,
-    "name": "name",
-    "tag": "tag"
-  },
-  {
-    "points": 0,
-    "name": "name",
-    "tag": "tag"
-  },
-  {
-    "points": 0,
-    "name": "name",
-    "tag": "tag"
-  },
-  {
-    "points": 0,
-    "name": "name",
-    "tag": "tag"
-  },
-  {
-    "points": 0,
-    "name": "name",
-    "tag": "tag"
+    "name": "Peppino"
   }
 ]

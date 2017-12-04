@@ -60,17 +60,24 @@ public static class GameManager
     }
 
     public static void GameOver()
+    {        
+        // Load the highscore scene
+        SceneManager.LoadScene("Highscore");
+    }
+
+    public static void SaveHighscore(string name, int points)
     {
         // Print the highscore
-        highscores.Add(new Highscore(Mathf.FloorToInt(RawDrunkLevel * 1000), "name", "tag"));
+        highscores.Add(new Highscore(points, name));
         highscores.Sort(new HighscoreComparer());
         JSONManager.Save("Highscores", highscores);
 
-        // Load the main menu
-        SceneManager.LoadScene("MainMenu");
-
+        // Reset variables
         PlayerSpawnPosition = Vector3.zero;
         playerStats = new PlayerStats(0, 1, 0);
+
+        // Load main menu
+        SceneManager.LoadScene("MainMenu");
     }
 
     private struct PlayerStats
@@ -91,13 +98,11 @@ public static class GameManager
     {
         public int points;
         public string name;
-        public string tag;
 
-        public Highscore(int points, string name, string tag)
+        public Highscore(int points, string name)
         {
             this.points = points;
             this.name = name;
-            this.tag = tag;
         }
     }
 
