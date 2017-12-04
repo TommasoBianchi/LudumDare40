@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731199, g: 0.3807403, b: 0.35872707, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311926, g: 0.38073996, b: 0.35872692, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -512,7 +512,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 278637670}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 336, y: 189, z: 0}
+  m_LocalPosition: {x: 505, y: 337.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 382630057}
@@ -637,7 +637,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 382630056}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 336, y: 189, z: 0}
+  m_LocalPosition: {x: 505, y: 337.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 278637674}
@@ -732,7 +732,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 05b096c93236aa44eacabfc9ef140366, type: 2}
+  - {fileID: 2100000, guid: aa3e746eb3678dd458e03b959c9905d0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -881,7 +881,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 05b096c93236aa44eacabfc9ef140366, type: 2}
+  - {fileID: 2100000, guid: aa3e746eb3678dd458e03b959c9905d0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1788,12 +1788,12 @@ Prefab:
     - target: {fileID: 224813681545956490, guid: 78758add14a0afb4aac1812a9d1ace83,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 336
+      value: 505
       objectReference: {fileID: 0}
     - target: {fileID: 224813681545956490, guid: 78758add14a0afb4aac1812a9d1ace83,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 189
+      value: 337.5
       objectReference: {fileID: 0}
     - target: {fileID: 224813681545956490, guid: 78758add14a0afb4aac1812a9d1ace83,
         type: 2}
@@ -2128,12 +2128,12 @@ Prefab:
     - target: {fileID: 224545851138662154, guid: 0f187e69c21cdc040b3a9c214fa0adae,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 336
+      value: 505
       objectReference: {fileID: 0}
     - target: {fileID: 224545851138662154, guid: 0f187e69c21cdc040b3a9c214fa0adae,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 189
+      value: 337.5
       objectReference: {fileID: 0}
     - target: {fileID: 224545851138662154, guid: 0f187e69c21cdc040b3a9c214fa0adae,
         type: 2}

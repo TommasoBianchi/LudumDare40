@@ -10,8 +10,20 @@ public static class GameManager
     {
         PlayerSpawnPosition = Vector3.zero;
         minigameSettings = JSONManager.LoadDirectory<Dictionary<string, float[]>>("Minigames");
-        barMinigames = JSONManager.Load<Dictionary<string, string>>("BarMinigames");
         highscores = JSONManager.Load<List<Highscore>>("Highscores");
+
+        minigames = JSONManager.Load<string[]>("Minigames");
+        bars = JSONManager.Load<string[]>("Bars");
+        string[] minigamesToAssignArray = minigames.Clone() as string[];
+        for (int i = minigames.Length - 1; i >= 0; i--)
+        {
+            int j = Random.Range(0, i + 1);
+            string tmp = minigamesToAssignArray[j];
+            minigamesToAssignArray[j] = minigamesToAssignArray[i];
+            minigamesToAssignArray[i] = tmp;
+        }
+        minigamesToAssign = minigamesToAssignArray.ToList();
+
         SelectNewBar();
     }
 
@@ -112,18 +124,34 @@ private static Dictionary<string, Dictionary<string, float[]>> minigameSettings;
 
     #region Bars
 
-    private static Dictionary<string, string> barMinigames;
+    private static string[] minigames;
+    private static string[] bars;   // TODO: manage bar names better
+    private static List<string> minigamesToAssign;
+    private static Dictionary<string, string> barToMinigamesDictionary = new Dictionary<string, string>();
     public static string SelectedBarName { get; private set; }
 
-    public static string GetMinigame(string barName)
+    private static string getMinigame()
     {
-        return barMinigames[barName];
+        if(minigamesToAssign.Count > 0)
+        {
+            string minigame = minigamesToAssign[0];
+            minigamesToAssign.RemoveAt(0);
+            return minigame;
+        }
+        else
+        {
+            return minigames[Random.Range(0, minigames.Length)];
+        }
     }
 
     public static void EnterBar(Bar bar, Transform player)
     {
+        if(barToMinigamesDictionary.ContainsKey(bar.name) == false)
+        {
+            barToMinigamesDictionary.Add(bar.name, getMinigame());
+        }
         PlayerSpawnPosition = player.position;
-        SceneManager.LoadScene(barMinigames[bar.name]);
+        SceneManager.LoadScene(barToMinigamesDictionary[bar.name]);
         GameManager.SelectNewBar();
     }
 
@@ -131,7 +159,7 @@ private static Dictionary<string, Dictionary<string, float[]>> minigameSettings;
     {
         List<string> names = new List<string>();
 
-        foreach (string name in barMinigames.Keys)
+        foreach (string name in bars)
         {
             if(name != SelectedBarName)
             {
