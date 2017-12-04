@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class MMenuScript : MonoBehaviour {
 
+    public Slider musicSlider;
+
     void Start()
     {
-        FindObjectOfType<Slider>().value = GameManager.musicVolume;
+        musicSlider.value = GameManager.musicVolume;
     }
 
     public void PlayGame ()
