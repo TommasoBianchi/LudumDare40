@@ -31,20 +31,8 @@ public class MinigameManager : MonoBehaviour {
             hasStarted = true;
             startPanel.gameObject.SetActive(false);
             countdown.SetActive(true);
-            StartCoroutine(doCountdown());
+            StartCoroutine(doAfterTime(3, () => startMinigame()));
         }
-    }
-
-    private IEnumerator doCountdown()
-    {
-        float endTime = Time.time + 3;
-
-        while(Time.time < endTime)
-        {
-            yield return null;
-        }
-
-        startMinigame();
     }
 
     private void startMinigame()
@@ -65,7 +53,7 @@ public class MinigameManager : MonoBehaviour {
         
         winPanel.gameObject.SetActive(true);
         GameManager.Drink(drunkAmountIfWin);
-        StartCoroutine(returnToMainScene());
+        StartCoroutine(doAfterTime(2, () => SceneManager.LoadScene("MainScene")));
     }
 
     public void Lose()
@@ -76,16 +64,18 @@ public class MinigameManager : MonoBehaviour {
         }
 
         losePanel.gameObject.SetActive(true);
-        StartCoroutine(returnToMainScene());
+        StartCoroutine(doAfterTime(2, () => SceneManager.LoadScene("MainScene")));
     }
 
-    IEnumerator returnToMainScene()
+    private IEnumerator doAfterTime(float time, System.Action callback)
     {
-        for (int i = 0; i < 100; i++)
+        float endTime = Time.time + time;
+
+        while (Time.time < endTime)
         {
             yield return null;
         }
-        
-        SceneManager.LoadScene("MainScene");
+
+        callback.Invoke();
     }
 }
