@@ -6521,6 +6521,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1911476011}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1911476014 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114501649510093626, guid: 78758add14a0afb4aac1812a9d1ace83,
+    type: 2}
+  m_PrefabInternal: {fileID: 1911476011}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1985263314
 GameObject:
   m_ObjectHideFlags: 0
@@ -6658,7 +6664,7 @@ Prefab:
         type: 2}
       propertyPath: losePanel
       value: 
-      objectReference: {fileID: 1911476012}
+      objectReference: {fileID: 1911476014}
     - target: {fileID: 114700177815540430, guid: 793ad08a626878c4aaf9ae0bc4cef07e,
         type: 2}
       propertyPath: freezeTime
