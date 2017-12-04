@@ -63,6 +63,7 @@ public class MinigameManager : MonoBehaviour {
             Time.timeScale = 0;
         }
 
+        GameManager.TakeDamage(GameManager.GetMinigameSetting("GameLost", "DamageTaken"));
         losePanel.gameObject.SetActive(true);
         StartCoroutine(doAfterTime(2, () => SceneManager.LoadScene("MainScene")));
     }
