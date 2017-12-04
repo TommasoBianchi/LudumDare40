@@ -11,8 +11,18 @@ public class Darts : MonoBehaviour {
     
     void Start ()
     {
-		
-	}
+        float targetSpeed = GaussianDistribution.Generate(
+            GameManager.GetMinigameSetting("Darts", "TargetSpeedMean"),
+            GameManager.GetMinigameSetting("Darts", "TargetSpeedVariance"));
+        targetSpeed = Mathf.Clamp(targetSpeed, 2, float.MaxValue);
+        target.speed = targetSpeed;
+
+        float aimSpeed = GaussianDistribution.Generate(
+            GameManager.GetMinigameSetting("Darts", "AimSpeedMean"),
+            GameManager.GetMinigameSetting("Darts", "AimSpeedVariance"));
+        aimSpeed = Mathf.Clamp(aimSpeed, 2, float.MaxValue);
+        aim.speed = aimSpeed;
+    }
 	
 	void Update ()
     {

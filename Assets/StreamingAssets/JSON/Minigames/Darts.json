@@ -1,1 +1,30 @@
-{}
+{
+	"TargetSpeedMean": [
+		5,
+		5,
+		5,
+		5,
+		5
+	],
+	"TargetSpeedVaiance": [
+		1,
+		1,
+		1,
+		1,
+		1
+	],
+	"AimSpeedMean": [
+		5,
+		5,
+		5,
+		5,
+		5
+	],
+	"AimSpeedVaiance": [
+		1,
+		1,
+		1,
+		1,
+		1
+	]
+}
