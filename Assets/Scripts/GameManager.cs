@@ -185,6 +185,9 @@ private static Dictionary<string, Dictionary<string, float[]>> minigameSettings;
     public static void SetMusicVolume(float amount)
     {
         musicVolume = amount;
-        onMusicVolumeChange.Invoke(musicVolume);
+        if (onMusicVolumeChange != null)
+        {
+            onMusicVolumeChange.Invoke(musicVolume);
+        }
     }
 }

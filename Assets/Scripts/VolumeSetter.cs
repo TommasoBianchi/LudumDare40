@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class VolumeSetter : MonoBehaviour
 {
 
+    private System.Action<float> action;
+
     void Start()
     {
         GetComponent<AudioSource>().volume = GameManager.musicVolume;
-        GameManager.onMusicVolumeChange += (f) =>
+        action = (f) =>
         {
             AudioSource audioSource = GetComponent<AudioSource>();
             if (audioSource != null)
@@ -17,10 +19,16 @@ public class VolumeSetter : MonoBehaviour
                 audioSource.volume = f;
             }
         };
+        GameManager.onMusicVolumeChange += action;
     }
 
     public void SetVolume(Slider volumeSlider)
     {
         GameManager.SetMusicVolume(volumeSlider.value);
+    }
+
+    void OnDestroy()
+    {
+        GameManager.onMusicVolumeChange -= action;
     }
 }
