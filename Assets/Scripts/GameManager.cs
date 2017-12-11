@@ -8,6 +8,8 @@ public static class GameManager
 
     static GameManager()
     {
+        JSONManager.Initialize();
+
         PlayerSpawnPosition = Vector3.zero;
         minigameSettings = JSONManager.LoadDirectory<Dictionary<string, float[]>>("Minigames");
         highscores = JSONManager.Load<List<Highscore>>("Highscores");
@@ -120,7 +122,7 @@ public static class GameManager
 
     #region Minigames
 
-private static Dictionary<string, Dictionary<string, float[]>> minigameSettings;
+    private static Dictionary<string, Dictionary<string, float[]>> minigameSettings;
 
     public static float GetMinigameSetting(string minigameName, string settingKey)
     {
